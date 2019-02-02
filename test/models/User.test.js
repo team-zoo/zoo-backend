@@ -26,4 +26,12 @@ describe('User model', () => {
 
     expect(errors.username.message).toEqual('Username required');
   });
+
+  it('stores a _tempPassword', () => {
+    const user = new User({
+      username: 'shabz',
+      password: 'passtotheword'
+    });
+    expect(user._tempPassword).toEqual('passtotheword');
+  });
 });
