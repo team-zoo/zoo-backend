@@ -1,9 +1,11 @@
 require('dotenv').config();
-require('../../lib/utils/connect')();
+const connect = require('../../lib/utils/connect');
 const mongoose = require('mongoose');
 const User = require('../../lib/models/User');
 
 describe('User model', () => {
+  beforeAll(() => connect());
+
   beforeEach(done => mongoose.connection.dropDatabase(done));
 
   afterAll(() => mongoose.connection.close());
@@ -34,4 +36,24 @@ describe('User model', () => {
     });
     expect(user._tempPassword).toEqual('passtotheword');
   });
+
+  it('has a passwordHash', () => {
+    return User.create({
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user =>  {
+        expect(user.passwordHash).toEqual(expect.any(String));
+        expect(user.password).toBeUndefined();
+      });
+  });
+
+  // it('can compare good passwords', () => {
+  //   return User.create({
+  //     username: 'shabz',
+  //     password: 'passit'
+  //   })
+  //     .then(user => user.compare('passit'))
+  //     .then(res => expect(res).toBeTruthy());
+  // });
 });
