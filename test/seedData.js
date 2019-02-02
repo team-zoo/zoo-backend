@@ -1,5 +1,5 @@
-const Chance = require('chance');
-const chance = new Chance();
+// const Chance = require('chance');
+// const chance = new Chance();
 const zooData = require('./data/zooData');
 const Zoo = require('../libs/models/Zoo');
 
