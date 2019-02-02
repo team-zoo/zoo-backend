@@ -1,7 +1,7 @@
 require('dotenv').config();
-const connect = require('../lib/utils/connect');
+const connect = require('./lib/utils/connect');
 const mongoose = require('mongoose');
-const Zoo = require('../lib/models/Zoo');
+const Zoo = require('./lib/models/Zoo');
 // const request = require('supertest');
 // const app = require('../lib/app');
 
