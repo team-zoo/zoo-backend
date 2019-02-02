@@ -19,4 +19,11 @@ describe('User model', () => {
         _id: expect.any(mongoose.Types.ObjectId)
       }));
   });
+
+  it('has a required username', () => {
+    const user = new User({});
+    const errors = user.validateSync().errors;
+
+    expect(errors.username.message).toEqual('Username required');
+  });
 });
