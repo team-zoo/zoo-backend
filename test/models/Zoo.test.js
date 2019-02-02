@@ -10,6 +10,7 @@ describe('zoo model', () => {
     };
     const newZoo = new Zoo(zoo);
     const jsonZoo = newZoo.toJSON();
+    
     expect(jsonZoo).toEqual({
       photoUrl: 'Great Zoo',
       name: 'Brooklyn Zoo',
