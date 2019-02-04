@@ -28,7 +28,10 @@ describe('visitor app', () => {
     mongoose.connection.close(done);
   });
   it('tests the visitor model', () => {
-    const visitor = new Visitor({ username: 'Bob' });
-    expect(visitor.toJSON()).toEqual({ username: 'Bob', _id: expect.any(Types.ObjectId) });
+    const visitor = new Visitor({ username: 'Bob1' });
+    expect(visitor.toJSON()).toEqual({ username: 'Bob1', _id: expect.any(Types.ObjectId) });
   });
+  it('can create a visitor', () => {
+    
+  })
 });
