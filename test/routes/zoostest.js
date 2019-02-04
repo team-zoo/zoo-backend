@@ -5,7 +5,7 @@ const app = require('../../lib/app');
 const { getToken, getZoo } = require('../dataHelper');
 
 describe('comment model', () => {
-  it.only('get a list of all zoos', () => {
+  it('get a list of all zoos', () => {
     return request(app)
       .get('/zoos')
       .set('Authorization', `Bearer ${getToken()}`)
