@@ -1,5 +1,4 @@
 require('dotenv').config();
-// require('../dataHelper');
 const mongoose = require('mongoose');
 const User = require('../../lib/models/User');
 
@@ -7,6 +6,7 @@ describe('User model', () => {
   it('validates a good model', () => {
     User
       .create({
+        role: 'owner',
         username: 'shabz',
         password: 'passit'
       })
@@ -25,6 +25,7 @@ describe('User model', () => {
 
   it('stores a _tempPassword', () => {
     const user = new User({
+      role: 'owner',
       username: 'shabz',
       password: 'passtotheword'
     });
@@ -33,6 +34,7 @@ describe('User model', () => {
 
   it('has a passwordHash', () => {
     User.create({
+      role: 'owner',
       username: 'shabz',
       password: 'passit'
     })
@@ -44,6 +46,7 @@ describe('User model', () => {
 
   it('can compare good passwords', () => {
     User.create({
+      role: 'owner',
       username: 'shabz',
       password: 'passit'
     })
@@ -53,6 +56,7 @@ describe('User model', () => {
 
   it('can compare bad passwords', () => {
     User.create({
+      role: 'owner',
       username: 'shabz',
       password: 'passit'
     })
