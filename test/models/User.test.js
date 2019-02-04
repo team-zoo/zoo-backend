@@ -31,33 +31,33 @@ describe('User model', () => {
     expect(user._tempPassword).toEqual('passtotheword');
   });
 
-  // it('has a passwordHash', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user =>  {
-  //       console.log('passwordHash', user.password);
-  //       expect(user.passwordHash).toEqual(expect.any(String));
-  //       expect(user.password).toBeUndefined();
-  //     });
-  // });
+  it('has a passwordHash', () => {
+    return User.create({
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user =>  {
+        console.log('passwordHash', user.password);
+        expect(user.passwordHash).toEqual(expect.any(String));
+        expect(user.password).toBeUndefined();
+      });
+  });
 
-  // it('can compare good passwords', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user => user.compare('passit'))
-  //     .then(res => expect(res).toBeTruthy());
-  // });
+  it('can compare good passwords', () => {
+    return User.create({
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user => user.compare('passit'))
+      .then(res => expect(res).toBeTruthy());
+  });
 
-  // it('can compare bad passwords', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user => user.compare('dontpassit'))
-  //     .then(res => expect(res).toBeFalsy);
-  // });
+  it('can compare bad passwords', () => {
+    return User.create({
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user => user.compare('dontpassit'))
+      .then(res => expect(res).toBeFalsy);
+  });
 });
