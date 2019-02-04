@@ -68,4 +68,17 @@ describe('visitor app', () => {
       });
 
   });
+  it('updates a visitor by id', () => {
+    return createVisitor('Jerry')
+      .then(visitor => {
+        const id = visitor._id;
+        const updatedVisitor = ({ username: 'Jam', age: 30, _id: expect.any(String) });
+        return request(app)
+          .patch(`/visitors/${id}`)
+          .send(updatedVisitor)
+          .then(res => {
+            expect(res.body).toEqual({ username: 'Jam', age: 30, _id: expect.any(String) });
+          });
+      });
+  });
 });
