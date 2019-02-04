@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('../../lib/utils/connect')();
 const connect = require('../../lib/utils/connect');
 const app = require('../../lib/app');
 const User = require('../../lib/models/User');
@@ -15,21 +14,25 @@ describe('User Model', () => {
     })
       .then(res =>  res.body);
   };
+
   beforeAll(() => {
     connect();
   });
+
   beforeEach(done => {
     mongoose.connection.dropDatabase(done);
   });
   afterAll(done => {
     mongoose.connection.close(done);
   });
+
   it('allows a user to sign up', () => {
-    return createUser('test1')
-      .then(() => {
-        return request(app) 
-          .post('/auth/signup')
-          .send({ username: 'test2', password: 'password', role: 'owner' });
+    return request(app) 
+      .post('/auth/signup')
+      .send({ 
+        username: 'test2', 
+        password: 'password', 
+        role: 'owner' 
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -42,6 +45,7 @@ describe('User Model', () => {
         });
       });
   });
+
   it('allows user to sign in', () => {
     return createUser('meeee1')
       .then(() => {
@@ -60,6 +64,7 @@ describe('User Model', () => {
         });
       });
   });
+  
   it('has verify route', () => {
     return createUser('weeee1')
       .then(() => {
