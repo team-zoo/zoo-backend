@@ -3,8 +3,8 @@ const connect = require('../../lib/utils/connect');
 const app = require('../../lib/app');
 const mongoose = require('mongoose');
 const request = require('supertest');
-const Visitor = require('../../lib/models/Visitor');
-const { Types } = require('mongoose');
+// const Visitor = require('../../lib/models/Visitor');
+// const { Types } = require('mongoose');
 
 const createVisitor = (username) => {
   return request(app)
@@ -26,10 +26,6 @@ describe('visitor app', () => {
   });
   afterAll(done => {
     mongoose.connection.close(done);
-  });
-  it('tests the visitor model', () => {
-    const visitor = new Visitor({ username: 'Leslie' });
-    expect(visitor.toJSON()).toEqual({ username: 'Leslie', _id: expect.any(Types.ObjectId) });
   });
   it('can create a visitor', () => {  
     return request(app)
