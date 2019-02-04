@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('../dataHelper');
+// require('../dataHelper');
 const mongoose = require('mongoose');
 const User = require('../../lib/models/User');
 
@@ -32,19 +32,18 @@ describe('User model', () => {
   });
 
   it('has a passwordHash', () => {
-    return User.create({
+    User.create({
       username: 'shabz',
       password: 'passit'
     })
       .then(user =>  {
-        console.log('passwordHash', user.password);
         expect(user.passwordHash).toEqual(expect.any(String));
         expect(user.password).toBeUndefined();
       });
   });
 
   it('can compare good passwords', () => {
-    return User.create({
+    User.create({
       username: 'shabz',
       password: 'passit'
     })
@@ -53,7 +52,7 @@ describe('User model', () => {
   });
 
   it('can compare bad passwords', () => {
-    return User.create({
+    User.create({
       username: 'shabz',
       password: 'passit'
     })
