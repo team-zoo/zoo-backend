@@ -1,4 +1,3 @@
-require('../dataHelper');
 const Zoo = require('../../lib/models/Zoo');
 
 describe('zoo model', () => {
