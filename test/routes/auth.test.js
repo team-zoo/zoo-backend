@@ -42,5 +42,23 @@ describe('User Model', () => {
         });
       });
   });
+  it('allows user to sign in', () => {
+    return createUser('meeee1')
+      .then(() => {
+        return request(app)
+          .post('/auth/signin')
+          .send({ username: 'meeee1', password: 'password' });
+      })
+      .then(res => {
+        expect(res.body).toEqual({ 
+          user: {
+            _id: expect.any(String),
+            username: 'meeee1',
+            role: 'owner'
+          },
+          token: expect.any(String)
+        });
+      });
+  });
 
 });
