@@ -26,19 +26,7 @@ beforeEach(() => {
   return User.findOne({ username: 'Bill0' })
     .then(user => {
       return request(app)
-        .post('/zoos/signin')
-        .send({ username: user.username, password: 'password' });
-    })
-    .then(res => {
-      token = res.body.token;
-    });
-});
-
-beforeEach(() => {
-  return User.findOne({ username: 'Bill0' })
-    .then(user => {
-      return request(app)
-        .post('/visitors/signin')
+        .post('/auth/signin')
         .send({ username: user.username, password: 'password' });
     })
     .then(res => {
