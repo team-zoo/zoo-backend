@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const seedData = require('./seedData');
 const User = require('../lib/models/User');
 const Zoo = require('../lib/models/Zoo');
+const Visitor = require('../lib/models/Visitor');
+const Animal = require('../lib/models/Animal');
 const request = require('supertest');
 const app = require('../lib/app');
 
@@ -24,7 +26,19 @@ beforeEach(() => {
   return User.findOne({ username: 'Bill0' })
     .then(user => {
       return request(app)
-        .post('/auth/signin')
+        .post('/zoos/signin')
+        .send({ username: user.username, password: 'password' });
+    })
+    .then(res => {
+      token = res.body.token;
+    });
+});
+
+beforeEach(() => {
+  return User.findOne({ username: 'Bill0' })
+    .then(user => {
+      return request(app)
+        .post('/visitors/signin')
         .send({ username: user.username, password: 'password' });
     })
     .then(res => {
@@ -49,7 +63,7 @@ const createGetters = Model => {
 module.exports = {
   ...createGetters(User),
   ...createGetters(Zoo),
-  // ...createGetters(Visitor),
-  // ...createGetters(Animal),
+  ...createGetters(Visitor),
+  ...createGetters(Animal),
   getToken: () => token
 };
