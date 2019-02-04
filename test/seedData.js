@@ -27,9 +27,9 @@ const seedData = () => {
           return Promise.all(
             [...Array(30)].map(() => {
               return Visitor.create({
-                username: 'hiyo',
+                username: chance.email(),
                 zoo: chance.pickone(zoos)._id,
-                age: 25,
+                age: chance.age(),
                 favoriteAnimal: chance.pickone(animals)._id
               });
             })

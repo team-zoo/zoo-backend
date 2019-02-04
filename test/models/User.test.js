@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('../dataHelper');
 const mongoose = require('mongoose');
 const User = require('../../lib/models/User');
 
@@ -7,6 +6,7 @@ describe('User model', () => {
   it('validates a good model', () => {
     User
       .create({
+        role: 'owner',
         username: 'shabz',
         password: 'passit'
       })
@@ -25,39 +25,42 @@ describe('User model', () => {
 
   it('stores a _tempPassword', () => {
     const user = new User({
+      role: 'owner',
       username: 'shabz',
       password: 'passtotheword'
     });
     expect(user._tempPassword).toEqual('passtotheword');
   });
 
-  // it('has a passwordHash', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user =>  {
-  //       console.log('passwordHash', user.password);
-  //       expect(user.passwordHash).toEqual(expect.any(String));
-  //       expect(user.password).toBeUndefined();
-  //     });
-  // });
+  it('has a passwordHash', () => {
+    User.create({
+      role: 'owner',
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user =>  {
+        expect(user.passwordHash).toEqual(expect.any(String));
+        expect(user.password).toBeUndefined();
+      });
+  });
 
-  // it('can compare good passwords', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user => user.compare('passit'))
-  //     .then(res => expect(res).toBeTruthy());
-  // });
+  it('can compare good passwords', () => {
+    User.create({
+      role: 'owner',
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user => user.compare('passit'))
+      .then(res => expect(res).toBeTruthy());
+  });
 
-  // it('can compare bad passwords', () => {
-  //   return User.create({
-  //     username: 'shabz',
-  //     password: 'passit'
-  //   })
-  //     .then(user => user.compare('dontpassit'))
-  //     .then(res => expect(res).toBeFalsy);
-  // });
+  it('can compare bad passwords', () => {
+    User.create({
+      role: 'owner',
+      username: 'shabz',
+      password: 'passit'
+    })
+      .then(user => user.compare('dontpassit'))
+      .then(res => expect(res).toBeFalsy);
+  });
 });
