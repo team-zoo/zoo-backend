@@ -22,8 +22,8 @@ describe('zoo model', () => {
       })
       .then(res => {
         expect(res.body).toEqual({ 
-          name: 'Oregon Zoo',
-          photoUrl: 'https://d1060ja7433lis.cloudfront.net/kr8BxxN8UG/apg_1507232961.jpg',
+          name: expect.any(String),
+          photoUrl: expect.any(String),
           city: 'Sacramento',
           _id: expect.any(String)
         });
