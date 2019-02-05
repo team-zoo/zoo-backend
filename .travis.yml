@@ -4,3 +4,5 @@ services: mongodb
 env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=CHANGEMENOW
 deploy:
   provider: heroku
+  api-key:
+    secure: CHANGEMENOW
