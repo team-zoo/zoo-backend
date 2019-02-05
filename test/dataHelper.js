@@ -31,6 +31,7 @@ beforeEach(() => {
 
 let token;
 beforeEach(() => {
+
   return User.findOne({ username: 'Bill0' })
     .then(user => {
       return request(app)

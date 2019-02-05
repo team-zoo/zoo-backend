@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('../../lib/utils/connect')();
 const connect = require('../../lib/utils/connect');
 require('dotenv').config();
 const connect = require('../../lib/utils/connect');
@@ -90,3 +89,4 @@ describe('User Model', () => {
       }); 
   });
 });
+

@@ -6,10 +6,27 @@ const Zoo = require('../../lib/models/Zoo');
 
 describe('User model', () => {
   it('tests the visitor model', () => {
-    const user = new User({ username: 'TOM', password: 'password' });
-    const zoo = new Zoo({ photoUrl: 'photo', name: 'San Diego zoo', city: 'San Diego' });
-    const visitor = new Visitor({ username: user._id, zoo: zoo._id, age: 15 });
-    expect(visitor.toJSON()).toEqual({ username: user._id, zoo: zoo._id, age: 15, _id: expect.any(mongoose.Types.ObjectId), favoriteAnimal: [] });
+    const user = new User({ 
+      username: 'TOM', 
+      password: 'password' 
+    });
+    const zoo = new Zoo({ 
+      photoUrl: 'photo', 
+      name: 'San Diego zoo', 
+      city: 'San Diego' 
+    });
+    const visitor = new Visitor({ 
+      username: user._id, 
+      zoo: zoo._id, 
+      age: 15 
+    });
+    expect(visitor.toJSON()).toEqual({ 
+      username: user._id, 
+      zoo: zoo._id, 
+      age: 15, 
+      _id: expect.any(mongoose.Types.ObjectId), 
+      favoriteAnimal: [] 
+    });
   });
 });
 
