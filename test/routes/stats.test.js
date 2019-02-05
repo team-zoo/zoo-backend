@@ -36,17 +36,27 @@ describe('zoo model', () => {
       });
   });
 
+  it('gets top 5 zoos in order of animal count', () => {
+    return request(app)
+      .get('/animals/stats/zoos-by-animal-count')
+      .then(res => {
+        expect(res.body).toHaveLength(5);
+        res.body.forEach(zoo => expect(zoo).toEqual({
+          _id: expect.any(String),
+          animalCount: expect.any(Number)
+        }));
+      });
+  });
 
-  // it('gets top 5 zoos in order of animal count', () => {
-  //   return request(app)
-  //     .get('/animals/stats/zoos-by-animal-count')
-  //     .then(res => {
-  //       expect(res.body).toHaveLength(5);
-  //       res.body.forEach(zoo => expect(zoo).toEqual({
-  //         _id: expect.any(String),
-  //         animalCount: expect.any(Number)
-  //       }));
-  //     });
-  // });
-
+  it('gets top 5 most prolific animal type across all zoos', () => {
+    return request(app)
+      .get('/animals/stats/zoos-prolific-animal-type-all')
+      .then(res => {
+        expect(res.body).toHaveLength(5);
+        res.body.forEach(animal => expect(animal).toEqual({
+          _id: expect.any(String),
+          animalCount: expect.any(Number)
+        }));
+      });
+  });
 });
