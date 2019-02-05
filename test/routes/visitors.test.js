@@ -1,80 +1,61 @@
 require('dotenv').config();
-const connect = require('../../lib/utils/connect');
 const app = require('../../lib/app');
-const mongoose = require('mongoose');
 const request = require('supertest');
-// const Visitor = require('../../lib/models/Visitor');
-// const { Types } = require('mongoose');
+const { getToken, getVisitor, } = require('../dataHelper');
 
-const createVisitor = (username) => {
-  return request(app)
-    .post('/visitors')
-    .send({
-      username: username,
-      age: 12,
-      password: 'password'
-    })
-    .then(res => res.body);
-};
+//getUser, getZoo, getAnimal Needs to include these before creating a visitor.
+
+// const Chance = require('chance');
+// const chance = new Chance();
 
 describe('visitor app', () => {
-  beforeAll(() => {
-    connect();
+  it('can create a visitor', () => {
+    
   });
-  beforeEach(done => {
-    mongoose.connection.dropDatabase(done);
-  });
-  afterAll(done => {
-    mongoose.connection.close(done);
-  });
-  it('can create a visitor', () => {  
+
+  it('gets a list of all visitors', () => {
     return request(app)
-      .post('/visitors')
-      .send({ username: 'Jerry', age: 12 })
+      .get('/visitors')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toEqual({
-          username: 'Jerry',
-          _id: expect.any(String),
-          age: 12
-        });
+        expect(res.body).toHaveLength(50);
       });
   });
-  it('get all visitors', () => {
-    return Promise.all(['Ron', 'April', 'Anne'].map(createVisitor))
-      .then(() => {
-        return request(app)
-          .get('/visitors');
-      })
-      .then(res => {
-        expect(res.body).toHaveLength(3);
-      });
-  });
-  it('can get a visitor by Id', () => {
-    return createVisitor('Tom')
+
+  it('can get a visitor by id', () => {
+    return getVisitor()
       .then(visitor => {
         return request(app)
           .get(`/visitors/${visitor._id}`)
-          .then(res => {
-            expect(res.body).toEqual({
-              username: 'Tom',
-              _id: expect.any(String),
-              age: 12
-            });
-          });
+          .set('Authorization', `Bearer ${getToken()}`);
+      })
+      .then(res => {
+        expect(res.body).toEqual({ 
+          username: expect.any(String),
+          zoo: expect.any(String),
+          age: expect.any(Number),
+          favoriteAnimal: expect.any(Array),
+          _id: expect.any(String)
+        });
       });
-
   });
-  it('updates a visitor by id', () => {
-    return createVisitor('Jerry')
+
+  it('can patch a visitor', () => {
+    return getVisitor()
       .then(visitor => {
-        const id = visitor._id;
-        const updatedVisitor = ({ username: 'Jam', age: 30, _id: expect.any(String) });
         return request(app)
-          .patch(`/visitors/${id}`)
-          .send(updatedVisitor)
-          .then(res => {
-            expect(res.body).toEqual({ username: 'Jam', age: 30, _id: expect.any(String) });
-          });
+          .patch(`/visitors/${visitor._id}`)
+          .set('Authorization', `Bearer ${getToken()}`)
+          .send({ age: 30 });
+      })
+      .then(res => {
+        expect(res.body).toEqual({ 
+          username: expect.any(String),
+          zoo: expect.any(String),
+          age: 30,
+          favoriteAnimal: expect.any(Array),
+          _id: expect.any(String)
+        });
       });
   });
 });

@@ -29,6 +29,14 @@ beforeEach(() => {
   return seedData({ totalUsers: 10, totalZoos: 5, totalVisitors: 20, totalAnimals: 30 });
 });
 
+beforeEach(() => {
+  return User.create({
+    username: 'Bill0',
+    role: 'owner',
+    password: 'password'
+  });
+});
+
 let token;
 beforeEach(() => {
 
