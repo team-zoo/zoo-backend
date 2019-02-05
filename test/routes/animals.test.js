@@ -49,20 +49,26 @@ describe('animal model', () => {
         });
       });
   });
-  
-  it('can update an animal by id', () => {
+  it('can get an animal by id', () => {
+    const zoo = new Zoo({ photoUrl: 'photo', name: 'San Diego zoo', city: 'San Diego' });
     return getAnimal()
       .then(animal => {
         return request(app)
           .patch(`/animals/${animal._id}`)
-          .set('Authorization', `Bearer ${getToken()}`);
+          .set('Authorization', `Bearer ${getToken()}`)
+          .send({
+            zoo: zoo._id,
+            name: 'parrot',
+            type: 'bird',
+            status: 'alive',
+          });
       })
       .then(res => {
         expect(res.body).toEqual({ 
           zoo: expect.any(String),
-          name: expect.any(String),
-          type: expect.any(String),
-          status: expect.any(String),
+          name: 'parrot',
+          type: 'bird',
+          status: 'alive',
           _id: expect.any(String)  
         });
       });
