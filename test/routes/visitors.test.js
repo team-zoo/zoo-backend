@@ -1,16 +1,35 @@
 require('dotenv').config();
 const app = require('../../lib/app');
 const request = require('supertest');
-const { getToken, getVisitor } = require('../dataHelper');
-
-//getUser, getZoo, getAnimal Needs to include these before creating a visitor.
-
-// const Chance = require('chance');
-// const chance = new Chance();
+const { getToken, getVisitor, getZoo, getUser, getAnimal } = require('../dataHelper');
 
 describe('visitor app', () => {
   it('can create a visitor', () => {
-    
+    return Promise.all([
+      getZoo(),
+      getAnimal(),
+      getUser()
+    ])
+      .then(([zoo, animal, user]) => {
+        return request(app)
+          .post('/visitors')
+          .set('Authorization', `Bearer ${getToken()}`)
+          .send({
+            username: user._id,
+            age: 5,
+            zoo: zoo._id,
+            favoriteAnimal: animal._id
+          })
+          .then(res => {
+            expect(res.body).toEqual({
+              username: expect.any(String),
+              age: 5,
+              zoo: expect.any(String),
+              favoriteAnimal: expect.any(Array),
+              _id: expect.any(String)
+            });
+          });
+      });
   });
 
   it('gets a list of all visitors', () => {
