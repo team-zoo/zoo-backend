@@ -35,6 +35,10 @@ describe('zoo model', () => {
         }));
       });
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 23990bbbfbdce2a993ac2579e1cc974a32c0cfe9
 
   // it('gets top 5 zoos in order of animal count', () => {
   //   return request(app)
