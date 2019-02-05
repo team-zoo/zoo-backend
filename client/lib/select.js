@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const zoos = require('./zoos');
-const animals = require('./animals');
-const visitors = require('./visitors');
+// const animals = require('./animals');
+// const visitors = require('./visitors');
 
 const select = () => {
   return inquirer.prompt([
@@ -18,12 +18,12 @@ const select = () => {
       if(selection === 'zoos') {
         return zoos();
       }
-      else if(selection === 'visitors'){
-        return visitors();
-      }
-      else if(selection === 'animals'){
-        return animals();
-      }
+      // else if(selection === 'visitors'){
+      //   return visitors();
+      // }
+      // else if(selection === 'animals'){
+      //   return animals();
+      // }
       else 'DO NOT UNDERSTAND PROMPT';
     })
     .then(select);
