@@ -11,9 +11,6 @@ describe('visitor app', () => {
       getUser()
     ])
       .then(([zoo, animal, user]) => {
-        console.log(zoo);
-        console.log(animal);
-        console.log(user);
         return request(app)
           .post('/visitors')
           .set('Authorization', `Bearer ${getToken()}`)
