@@ -20,7 +20,6 @@ describe('animal model', () => {
           .get(`/animals/${animal._id}`);
       })
       .then(res => {
-        console.log('animal by id body', res.body);
         expect(res.body).toEqual({
           zoo: expect.any(Object),
           name: expect.any(String),
