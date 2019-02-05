@@ -35,20 +35,16 @@ describe('zoo model', () => {
         }));
       });
   });
-<<<<<<< HEAD
-=======
 
->>>>>>> 23990bbbfbdce2a993ac2579e1cc974a32c0cfe9
-
-  // it('gets top 5 zoos in order of animal count', () => {
-  //   return request(app)
-  //     .get('/animals/stats/zoos-by-animal-count')
-  //     .then(res => {
-  //       expect(res.body).toHaveLength(5);
-  //       res.body.forEach(zoo => expect(zoo).toEqual({
-  //         _id: expect.any(String),
-  //         animalCount: expect.any(Number)
-  //       }));
-  //     });
-  // });
+  it('gets top 5 zoos in order of animal count', () => {
+    return request(app)
+      .get('/animals/stats/zoos-by-animal-count')
+      .then(res => {
+        expect(res.body).toHaveLength(5);
+        res.body.forEach(zoo => expect(zoo).toEqual({
+          _id: expect.any(String),
+          animalCount: expect.any(Number)
+        }));
+      });
+  });
 });
