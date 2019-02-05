@@ -48,5 +48,22 @@ describe('zoo model', () => {
         });
       });
   });
+  it('can get an animal by id', () => {
+    return getAnimal()
+      .then(animal => {
+        return request(app)
+          .patch(`/animals/${animal._id}`)
+          .set('Authorization', `Bearer ${getToken()}`);
+      })
+      .then(res => {
+        expect(res.body).toEqual({ 
+          zoo: expect.any(String),
+          name: expect.any(String),
+          type: expect.any(String),
+          status: expect.any(String),
+          _id: expect.any(String)  
+        });
+      });
+  });
 });
 
