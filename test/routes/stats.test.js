@@ -23,4 +23,16 @@ describe('zoo model', () => {
         }));
       });
   });
+
+  it('gets top 5 zoos by visitor count', () => {
+    return request(app)
+      .get('/visitors/stats/zoos-by-visitor-count')
+      .then(res => {
+        expect(res.body).toHaveLength(5);
+        res.body.forEach(count => expect(count).toEqual({
+          _id: expect.any(String),
+          visitorsCount: expect.any(Number)
+        }));
+      });
+  });
 });
