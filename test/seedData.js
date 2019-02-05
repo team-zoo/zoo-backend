@@ -13,7 +13,12 @@ const DEFAULT_TOTAL_ANIMALS = 100;
 const DEFAULT_TOTAL_USERS = 100;
 
 /*eslint-disable no-unused-vars*/
-const seedData = (totalUsers = DEFAULT_TOTAL_USERS, totalVisitors = DEFAULT_TOTAL_VISITORS, totalAnimals = DEFAULT_TOTAL_ANIMALS, totalZoos = DEFAULT_TOTAL_ZOOS) => {
+module.exports = ({
+  totalUsers = DEFAULT_TOTAL_USERS, 
+  totalVisitors = DEFAULT_TOTAL_VISITORS, 
+  totalAnimals = DEFAULT_TOTAL_ANIMALS, 
+  totalZoos = DEFAULT_TOTAL_ZOOS
+}) => {
   return Promise.all(
     [...Array(totalUsers)].map(() => {
       return User.create({
@@ -50,7 +55,4 @@ const seedData = (totalUsers = DEFAULT_TOTAL_USERS, totalVisitors = DEFAULT_TOTA
         });
     });
 };
-
-
-module.exports = seedData;
 
