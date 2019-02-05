@@ -1,7 +1,5 @@
 require('dotenv').config();
 const connect = require('../../lib/utils/connect');
-require('dotenv').config();
-const connect = require('../../lib/utils/connect');
 const app = require('../../lib/app');
 const User = require('../../lib/models/User');
 const request = require('supertest');
