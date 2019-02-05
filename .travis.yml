@@ -1,6 +1,6 @@
 language: node_js
 node_js: "node"
 services: mongodb
-env: MONGODB_URI=mongodb://localhost:27017/zoos
+env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=seekrat
 deploy:
   provider: heroku
