@@ -3,7 +3,7 @@ const app = require('../../lib/app');
 const { getToken, getAnimal } = require('../dataHelper');
 const Zoo = require('../../lib/models/Zoo');
 
-describe('zoo model', () => {
+describe('animal model', () => {
   it('get a list of all animals', () => {
     return request(app)
       .get('/animals')
@@ -27,6 +27,7 @@ describe('zoo model', () => {
         _id: expect.any(String)
       }));
   });
+
   it('posts an animal', () => {
     const zoo = new Zoo({ photoUrl: 'photo', name: 'San Diego zoo', city: 'San Diego' });
     return request(app)
