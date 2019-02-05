@@ -3,7 +3,7 @@ const app = require('../../lib/app');
 const { getToken, getAnimal } = require('../dataHelper');
 const Zoo = require('../../lib/models/Zoo');
 
-describe('zoo model', () => {
+describe('animal model', () => {
   it('get a list of all animals', () => {
     return request(app)
       .get('/animals')
@@ -50,7 +50,7 @@ describe('zoo model', () => {
       });
   });
   
-  it('can get an animal by id', () => {
+  it('can update an animal by id', () => {
     return getAnimal()
       .then(animal => {
         return request(app)

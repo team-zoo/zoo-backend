@@ -5,15 +5,15 @@ const { getToken, getVisitor, getZoo, getUser, getAnimal } = require('../dataHel
 
 describe('visitor app', () => {
   it('can create a visitor', () => {
-    return getZoo()
-      .then(zoo => {
-        return Promise.all([
-          Promise.resolve(zoo),
-          getAnimal(),
-          getUser()
-        ]);
-      })
+    return Promise.all([
+      getZoo(),
+      getAnimal(),
+      getUser()
+    ])
       .then(([zoo, animal, user]) => {
+        console.log(zoo);
+        console.log(animal);
+        console.log(user);
         return request(app)
           .post('/visitors')
           .set('Authorization', `Bearer ${getToken()}`)
@@ -31,8 +31,7 @@ describe('visitor app', () => {
               favoriteAnimal: expect.any(String)
             });
           });
-
-      })
+      });
   });
 
   it('gets a list of all visitors', () => {
