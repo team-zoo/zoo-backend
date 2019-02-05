@@ -1,7 +1,7 @@
 require('dotenv').config();
 const app = require('../../lib/app');
 const request = require('supertest');
-const { getToken, getVisitor, } = require('../dataHelper');
+const { getToken, getVisitor } = require('../dataHelper');
 
 //getUser, getZoo, getAnimal Needs to include these before creating a visitor.
 
@@ -18,7 +18,7 @@ describe('visitor app', () => {
       .get('/visitors')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toHaveLength(50);
+        expect(res.body).toHaveLength(20);
       });
   });
 
