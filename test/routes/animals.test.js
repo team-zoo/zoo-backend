@@ -27,6 +27,7 @@ describe('zoo model', () => {
         _id: expect.any(String)
       }));
   });
+
   it('posts an animal', () => {
     const zoo = new Zoo({ photoUrl: 'photo', name: 'San Diego zoo', city: 'San Diego' });
     return request(app)
@@ -48,6 +49,7 @@ describe('zoo model', () => {
         });
       });
   });
+  
   it('can get an animal by id', () => {
     return getAnimal()
       .then(animal => {
