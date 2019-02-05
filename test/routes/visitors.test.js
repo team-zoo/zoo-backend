@@ -28,7 +28,7 @@ describe('visitor app', () => {
               username: expect.any(String),
               age: 5,
               zoo: expect.any(String),
-              favoriteAnimal: expect.any(String),
+              favoriteAnimal: expect.any(Array),
               _id: expect.any(String)
             });
           });
