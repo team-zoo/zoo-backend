@@ -26,4 +26,25 @@ describe('zoo model', () => {
         _id: expect.any(String)
       }));
   });
+  it('posts an animal', () => {
+    return request(app)
+      .post('/animals')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .send({
+        zoo: 'San Diego Zoo',
+        name: 'penguin',
+        type: 'bird',
+        status: 'alive'
+      })
+      .then(res => {
+        expect(res.body).toEqual({
+          zoo: 'San Diego Zoo',
+          name: 'penguin',
+          type: 'bird',
+          status: 'alive',
+          _id: expect.any(String),  
+        });
+      });
+  });
 });
+
