@@ -59,4 +59,14 @@ describe('zoo model', () => {
         }));
       });
   });
+
+  it('get most favorited animal among all zoos', () => {
+    return request(app)
+      .get('/animals/stats/fav-animal-all')
+      .then(res => expect(res.body).toEqual([{
+        _id: expect.any(String),
+        animalCount: expect.any(Number),
+        animalName: expect.any(String)
+      }]));
+  });
 });
