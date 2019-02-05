@@ -51,8 +51,8 @@ describe('visitor app', () => {
       .then(res => {
         console.log('visitor by id', res.body);
         expect(res.body).toEqual({ 
-          username: expect.any(String),
-          zoo: expect.any(String),
+          username: expect.any(Object),
+          zoo: expect.any(Object),
           age: expect.any(Number),
           favoriteAnimal: expect.any(Array),
           _id: expect.any(String)
@@ -70,8 +70,8 @@ describe('visitor app', () => {
       })
       .then(res => {
         expect(res.body).toEqual({ 
-          username: expect.any(String),
-          zoo: expect.any(String),
+          username: expect.any(Object),
+          zoo: expect.any(Object),
           age: 30,
           favoriteAnimal: expect.any(Array),
           _id: expect.any(String)
