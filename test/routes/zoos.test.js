@@ -34,7 +34,8 @@ describe('zoo model', () => {
     return getZoo()
       .then(zoo => {
         return request(app)
-          .get(`/zoos/${zoo._id}`);
+          .get(`/zoos/${zoo._id}`)
+          .set('Authorization', `Bearer ${getToken()}`);
       })
       .then(res => {
         expect(res.body).toEqual({ 
