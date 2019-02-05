@@ -36,6 +36,7 @@ describe('zoo model', () => {
       });
   });
 
+
   // it('gets top 5 zoos in order of animal count', () => {
   //   return request(app)
   //     .get('/animals/stats/zoos-by-animal-count')
@@ -47,4 +48,5 @@ describe('zoo model', () => {
   //       }));
   //     });
   // });
+
 });
