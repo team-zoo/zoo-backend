@@ -57,5 +57,3 @@ module.exports = ({
 };
 
 
-module.exports = seedData;
-
