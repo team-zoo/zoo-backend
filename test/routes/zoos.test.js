@@ -1,11 +1,9 @@
-require('dotenv').config();
-require('../../lib/utils/connect')();
 const request = require('supertest');
 const app = require('../../lib/app');
 const { getToken, getZoo } = require('../dataHelper');
 
-describe('comment model', () => {
-  it.only('get a list of all zoos', () => {
+describe('zoo model', () => {
+  it('get a list of all zoos', () => {
     return request(app)
       .get('/zoos')
       .set('Authorization', `Bearer ${getToken()}`)
@@ -47,11 +45,4 @@ describe('comment model', () => {
         });
       });
   });
-
-  
-
-
-
-
-
 });

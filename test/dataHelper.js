@@ -18,11 +18,20 @@ beforeEach(done => {
 });
 
 beforeEach(() => {
+  return User.create({
+    username: 'Bill0',
+    role: 'owner',
+    password: 'password'
+  });
+});
+
+beforeEach(() => {
   return seedData({ totalUsers: 10, totalZoos: 5, totalVisitors: 20, totalAnimals: 30 });
 });
 
 let token;
 beforeEach(() => {
+
   return User.findOne({ username: 'Bill0' })
     .then(user => {
       return request(app)
@@ -33,6 +42,7 @@ beforeEach(() => {
       token = res.body.token;
     });
 });
+
 
 afterAll(done => {
   mongoose.connection.close(done);
