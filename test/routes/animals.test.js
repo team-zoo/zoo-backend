@@ -19,13 +19,16 @@ describe('animal model', () => {
         return request(app)
           .get(`/animals/${animal._id}`);
       })
-      .then(res => expect(res.body).toEqual({
-        zoo: expect.any(String),
-        name: expect.any(String),
-        type: expect.any(String),
-        status: expect.any(String),
-        _id: expect.any(String)
-      }));
+      .then(res => {
+        console.log('animal by id body', res.body);
+        expect(res.body).toEqual({
+          zoo: expect.any(Object),
+          name: expect.any(String),
+          type: expect.any(String),
+          status: expect.any(String),
+          _id: expect.any(String)
+        });
+      });
   });
 
   it('posts an animal', () => {
@@ -49,7 +52,7 @@ describe('animal model', () => {
         });
       });
   });
-  it('can get an animal by id', () => {
+  it('can update an animal by id', () => {
     const zoo = new Zoo({ photoUrl: 'photo', name: 'San Diego zoo', city: 'San Diego' });
     return getAnimal()
       .then(animal => {
@@ -57,7 +60,7 @@ describe('animal model', () => {
           .patch(`/animals/${animal._id}`)
           .set('Authorization', `Bearer ${getToken()}`)
           .send({
-            zoo: zoo._id,
+            zoo: zoo,
             name: 'parrot',
             type: 'bird',
             status: 'alive',
@@ -65,7 +68,7 @@ describe('animal model', () => {
       })
       .then(res => {
         expect(res.body).toEqual({ 
-          zoo: expect.any(String),
+          zoo: expect.any(Object),
           name: 'parrot',
           type: 'bird',
           status: 'alive',
