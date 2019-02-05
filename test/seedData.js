@@ -7,9 +7,15 @@ const Visitor = require('../lib/models/Visitor');
 const Animal = require('../lib/models/Animal');
 const User = require('../lib/models/User');
 
-const seedData = () => {
+const DEFAULT_TOTAL_ZOOS = 10;
+const DEFAULT_TOTAL_VISITORS = 50;
+const DEFAULT_TOTAL_ANIMALS = 100;
+const DEFAULT_TOTAL_USERS = 100;
+
+/*eslint-disable no-unused-vars*/
+const seedData = (totalUsers = DEFAULT_TOTAL_USERS, totalVisitors = DEFAULT_TOTAL_VISITORS, totalAnimals = DEFAULT_TOTAL_ANIMALS, totalZoos = DEFAULT_TOTAL_ZOOS) => {
   return Promise.all(
-    [...Array(100)].map(() => {
+    [...Array(totalUsers)].map(() => {
       return User.create({
         username: chance.email(),
         role: chance.pickone(['owner', 'visitor']),
@@ -31,7 +37,7 @@ const seedData = () => {
           )
             .then(animals => {
               return Promise.all(
-                [...Array(100)].map(() => {
+                [...Array(totalVisitors)].map(() => {
                   return Visitor.create({
                     username: chance.pickone(users)._id,
                     zoo: chance.pickone(zoos)._id,
@@ -42,7 +48,6 @@ const seedData = () => {
               );
             });
         });
-
     });
 };
 
