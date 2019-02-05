@@ -40,7 +40,7 @@ describe('visitor app', () => {
       .get('/visitors')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toHaveLength(50);
+        expect(res.body).toHaveLength(20);
       });
   });
 
