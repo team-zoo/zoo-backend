@@ -57,16 +57,15 @@ describe('zoo model', () => {
           .set('Authorization', `Bearer ${getToken()}`)
           .send({
             zoo: zoo._id,
-            name: 'penguin',
+            name: 'parrot',
             type: 'bird',
             status: 'alive',
           });
       })
       .then(res => {
-        console.log(res.body);
         expect(res.body).toEqual({ 
           zoo: expect.any(String),
-          name: 'penguin',
+          name: 'parrot',
           type: 'bird',
           status: 'alive',
           _id: expect.any(String)  
