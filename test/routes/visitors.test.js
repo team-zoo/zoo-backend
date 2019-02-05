@@ -49,6 +49,7 @@ describe('visitor app', () => {
           .set('Authorization', `Bearer ${getToken()}`);
       })
       .then(res => {
+        console.log('visitor by id', res.body);
         expect(res.body).toEqual({ 
           username: expect.any(String),
           zoo: expect.any(String),
