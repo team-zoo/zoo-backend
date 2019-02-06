@@ -34,7 +34,6 @@ describe('zoo model', () => {
   it('can get a zoo by id', () => {
     return getZoo({ name: 'Oregon Zoo' })
       .then(zoo => {
-        console.log('ZOO', zoo);
         return request(app)
           .get(`/zoos/${zoo._id}`)
           .set('Authorization', `Bearer ${getToken()}`);
