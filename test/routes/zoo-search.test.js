@@ -1,0 +1,14 @@
+const request = require('supertest');
+const app = require('../../lib/app');
+
+describe('zoo model', () => {
+  it('gets suggested zoos by zip code', () => {
+    return request(app)
+      .get('/zoos/search/97070')
+      .then(res => expect(res.body).toEqual([{
+        name: 'Oregon Zoo',
+        address: '4001 Southwest Canyon Road, Portland, OR 97221, USA',
+        rating: 4.5
+      }]));
+  });
+});
