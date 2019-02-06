@@ -31,6 +31,6 @@ module.exports = () => {
     })
     .then(res => {
       setToken(res.body.token);
-    })
+    });
 
 };
