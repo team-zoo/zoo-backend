@@ -7,6 +7,7 @@ describe('zoo model', () => {
   it('gets average visitor age for all zoos', () => {
     return request(app)
       .get('/visitors/stats/average-age-all')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => expect(res.body[0]).toEqual({
         _id: null,
         avgAge: expect.any(Number)
@@ -16,6 +17,7 @@ describe('zoo model', () => {
   it('gets average visitor age for each zoo', () => {
     return request(app)
       .get('/visitors/stats/average-age-each')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
@@ -30,6 +32,7 @@ describe('zoo model', () => {
   it('gets top 5 zoos by visitor count', () => {
     return request(app)
       .get('/visitors/stats/zoos-by-visitor-count')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
@@ -44,6 +47,7 @@ describe('zoo model', () => {
   it('gets top 5 zoos in order of animal count', () => {
     return request(app)
       .get('/animals/stats/zoos-by-animal-count')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
@@ -58,6 +62,7 @@ describe('zoo model', () => {
   it('gets top 5 most prolific animal type across all zoos', () => {
     return request(app)
       .get('/animals/stats/zoos-prolific-animal-type-all')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(animal => expect(animal).toEqual({
@@ -71,6 +76,7 @@ describe('zoo model', () => {
   it('get most favorited animal among all zoos', () => {
     return request(app)
       .get('/animals/stats/fav-animal-all')
+      .set('Authorization', `Bearer ${getToken()}`)
       .then(res => expect(res.body).toEqual([{
         _id: expect.any(String),
         animalCount: expect.any(Number),
