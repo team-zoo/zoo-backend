@@ -1,5 +1,8 @@
 const signin = require('./lib/signin');
 const selection = require('./lib/select');
+
+console.log(selection);
+
 /* eslint-disable */
 console.log(`
 '########::'#######:::'#######::::::'######::'####:'##::::'##:'##::::'##:'##::::::::::'###::::'########::'#######::'########::'####:
