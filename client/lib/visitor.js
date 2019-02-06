@@ -13,7 +13,7 @@ module.exports = id => {
       ]);
     })
     .then(([visitor]) => {
-      console.log(visitor.username.username);
-      console.log(visitor.favoriteAnimal.map(animal => animal.name).join(' | '));
+      console.log(`USERNAME: ${visitor.username.username}`);
+      console.log(`FAVORITE ANIMALS: ${visitor.favoriteAnimal.map(animal => animal.name).join(' | ')}`);
     });
 };
