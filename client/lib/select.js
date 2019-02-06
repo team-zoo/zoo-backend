@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const zoos = require('./zoos');
-// const animals = require('./animals');
+const animals = require('./animals');
 const visitors = require('./visitors');
 
 const select = () => {
@@ -9,9 +9,11 @@ const select = () => {
       type: 'list',
       name: 'selection',
       message: 'Please choose zoo, visitor, or animal',
-      choices: [{ name: 'Zoo', value: 'zoos' }, 
+      choices: [
+        { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 
-        { name: 'Animals', value: 'animals' }]
+        { name: 'Animals', value: 'animals' }
+      ]
     }
   ])
     .then(({ selection }) => {
@@ -21,9 +23,9 @@ const select = () => {
       else if(selection === 'visitors'){
         return visitors();
       }
-      // else if(selection === 'animals'){
-      //   return animals();
-      // }
+      else if(selection === 'animals'){
+        return animals();
+      }
       else 'DO NOT UNDERSTAND PROMPT';
     })
     .then(select);
