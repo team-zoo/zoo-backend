@@ -3,7 +3,7 @@ const app = require('../../lib/app');
 const { getToken, getAnimal, getZoo } = require('../dataHelper');
 
 describe('animal model', () => {
-  it('get a list of all animals', () => {
+  it('gets a list of all animals', () => {
     return request(app)
       .get('/animals')
       .set('Authorization', `Bearer ${getToken()}`)
@@ -12,16 +12,25 @@ describe('animal model', () => {
       });
   });
 
-  it('get a specific animal from search query', () => {
+  it('gets a specific animal from search query', () => {
     return request(app)
-      .get('/animals/search/getAnimal?name=wolf')
+      .get('/animals/search/name/q?name=wolf')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         expect(res.body.name).toEqual('wolf');
       });
   });
 
-  it('get animal by id', () => {
+  it('gets a animals by type from search query', () => {
+    return request(app)
+      .get('/animals/search/type/q?type=mammal')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body[0].type).toEqual('mammal');
+      });
+  });
+
+  it('gets animal by id', () => {
     return getAnimal()
       .then(animal => {
         return request(app)
@@ -64,6 +73,7 @@ describe('animal model', () => {
         });
       });
   });
+
   it('can update an animal by id', () => {
     return getZoo()
       .then(zoo => {
