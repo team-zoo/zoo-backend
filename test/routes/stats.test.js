@@ -32,7 +32,9 @@ describe('zoo model', () => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
-          visitorsCount: expect.any(Number)
+          visitorCount: expect.any(Number),
+          zooName: expect.any(String),
+          zooCity: expect.any(String)
         }));
       });
   });
