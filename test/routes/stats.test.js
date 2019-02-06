@@ -49,7 +49,8 @@ describe('zoo model', () => {
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
           animalCount: expect.any(Number),
-          zooName: expect.any(String)
+          zooName: expect.any(String),
+          zooCity: expect.any(String)
         }));
       });
   });
