@@ -12,6 +12,17 @@ describe('zoo model', () => {
       });
   });
 
+  it('return most favorited animal from given zoo', () => {
+    return request(app)
+      .get('/zoos/stats/fav-animal-given-zoo/1')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        console.log(res.body);
+
+        expect(res.body).toEqual('hello');
+      });
+  });
+
   it('can patch a zoo', () => {
     return getZoo()
       .then(zoo => {
