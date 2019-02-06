@@ -20,7 +20,9 @@ describe('zoo model', () => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
-          avgAge: expect.any(Number)
+          avgAge: expect.any(Number),
+          zooCity: expect.any(String),
+          zooName: expect.any(String)
         }));
       });
   });
@@ -32,7 +34,9 @@ describe('zoo model', () => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
-          visitorsCount: expect.any(Number)
+          visitorCount: expect.any(Number),
+          zooName: expect.any(String),
+          zooCity: expect.any(String)
         }));
       });
   });
@@ -45,7 +49,8 @@ describe('zoo model', () => {
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
           animalCount: expect.any(Number),
-          zooName: expect.any(String)
+          zooName: expect.any(String),
+          zooCity: expect.any(String)
         }));
       });
   });
@@ -78,8 +83,14 @@ describe('zoo model', () => {
       .get('/animals/stats/fav-animal-each-zoo')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        console.log(res.body);
         expect(res.body).toHaveLength(5);
+        res.body.forEach(animal => expect(animal).toEqual({
+          _id: expect.any(String),
+          animalName: expect.any(String),
+          animalCount: expect.any(Number),
+          zooCity: expect.any(String),
+          zooName: expect.any(String)
+        }));
       });
   });
 });
