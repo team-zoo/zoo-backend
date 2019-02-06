@@ -5,7 +5,8 @@ describe('zoo model', () => {
     const zoo = {
       photoUrl: 'Great Zoo',
       name: 'Brooklyn Zoo',
-      city: 'Brooklyn'
+      city: 'Brooklyn',
+      id: 6
     };
     const newZoo = new Zoo(zoo);
     const jsonZoo = newZoo.toJSON();
@@ -14,7 +15,8 @@ describe('zoo model', () => {
       photoUrl: 'Great Zoo',
       name: 'Brooklyn Zoo',
       city: 'Brooklyn',
-      _id: expect.any(Object)
+      _id: expect.any(Object),
+      id: 6
     });
   });
 });

@@ -25,13 +25,14 @@ describe('zoo model', () => {
           name: expect.any(String),
           photoUrl: expect.any(String),
           city: 'Sacramento',
-          _id: expect.any(String)
+          _id: expect.any(String),
+          id: expect.any(Number)
         });
       });
   });
 
   it('can get a zoo by id', () => {
-    return getZoo()
+    return getZoo({ name: 'Oregon Zoo' })
       .then(zoo => {
         return request(app)
           .get(`/zoos/${zoo._id}`)
@@ -39,10 +40,11 @@ describe('zoo model', () => {
       })
       .then(res => {
         expect(res.body).toEqual({ 
-          name: expect.any(String),
+          name: 'Oregon Zoo',
           photoUrl: expect.any(String),
           city: expect.any(String),
-          _id: expect.any(String)
+          _id: expect.any(String),
+          id: expect.any(Number)
         });
       });
   });

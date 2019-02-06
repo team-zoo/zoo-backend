@@ -23,7 +23,7 @@ module.exports = id => {
     })
     .then(([zoo, image]) => {
       console.log(image);
-      console.log(zoo.name);
-      console.log(zoo.city);
+      console.log(`ZOO NAME: ${zoo.name}`);
+      console.log(`ZOO CITY: ${zoo.city}`);
     });
 };

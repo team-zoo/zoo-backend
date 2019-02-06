@@ -10,16 +10,10 @@ module.exports = id => {
     .then(visitor => {
       return Promise.all([
         Promise.resolve(visitor)
-        // request.get(visitor._id)
       ]);
     })
     .then(([visitor]) => {
-      return Promise.all([
-        Promise.resolve(visitor)
-      ]);
-    })
-    .then(([visitor]) => {
-      // console.log(image);
-      console.log(visitor.age);
+      console.log(`USERNAME: ${visitor.username.username}`);
+      console.log(`FAVORITE ANIMALS: ${visitor.favoriteAnimal.map(animal => animal.name).join(' | ')}`);
     });
 };
