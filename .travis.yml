@@ -1,7 +1,7 @@
 language: node_js
 node_js: "node"
 services: mongodb
-env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=CHANGEMENOW
+env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=CHANGEMENOW API_KEY=AIzaSyAVU-wrPjeU6yb5aZjUz0AHSsImoI3Ixn4
 deploy:
   provider: heroku
   api-key:
