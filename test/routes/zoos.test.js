@@ -12,14 +12,13 @@ describe('zoo model', () => {
       });
   });
 
-  it('return most favorited animal from given zoo', () => {
+  it('return most favorited animal from each zoo', () => {
     return request(app)
-      .get('/zoos/stats/fav-animal-given-zoo/1')
+      .get('/zoos/stats/fav-animal-each-zoo')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
         console.log(res.body);
-
-        expect(res.body).toEqual('hello');
+        expect(res.body).toHaveLength(5);
       });
   });
 
