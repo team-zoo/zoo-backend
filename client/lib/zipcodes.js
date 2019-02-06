@@ -1,6 +1,4 @@
-// const config = require('../config');
 const inquirer = require('inquirer');
-// const request = require('superagent');
 const getZipcode = require('./zipcode');
 
 

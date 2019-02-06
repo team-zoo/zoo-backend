@@ -3,6 +3,7 @@ const zoos = require('./zoos');
 const animals = require('./animals');
 const visitors = require('./visitors');
 const zipcodes = require('./zipcodes');
+const animalType = require('./animalTypes');
 
 const select = () => {
   return inquirer.prompt([
@@ -14,7 +15,8 @@ const select = () => {
         { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 
         { name: 'Animals', value: 'animals' },
-        { name: 'Search For a Zoo', value: 'zipcodes' }
+        { name: 'Search For a Zoo', value: 'zipcodes' },
+        { name: 'Search For an animal type', value: 'animalTypes' }
       ]
     }
   ])
@@ -30,6 +32,9 @@ const select = () => {
       }
       else if(selection === 'zipcodes') {
         return zipcodes();
+      }
+      else if(selection === 'animalTypes') {
+        return animalType();
       }
       else 'DO NOT UNDERSTAND PROMPT';
     })
