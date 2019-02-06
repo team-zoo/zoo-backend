@@ -12,16 +12,6 @@ describe('zoo model', () => {
       });
   });
 
-  it('return most favorited animal from each zoo', () => {
-    return request(app)
-      .get('/zoos/stats/fav-animal-each-zoo')
-      .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => {
-        console.log(res.body);
-        expect(res.body).toHaveLength(5);
-      });
-  });
-
   it('can patch a zoo', () => {
     return getZoo()
       .then(zoo => {
