@@ -3,6 +3,13 @@ const { setToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 
+<<<<<<< HEAD
+=======
+
+console.log('select', require('./select'));
+
+
+>>>>>>> dev
 module.exports = () => {
   return inquirer.prompt([
     { 
