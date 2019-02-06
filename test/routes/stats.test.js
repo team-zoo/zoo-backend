@@ -82,6 +82,13 @@ describe('zoo model', () => {
       .then(res => {
         console.log(res.body);
         expect(res.body).toHaveLength(5);
+        res.body.forEach(animal => expect(animal).toEqual({
+          _id: expect.any(String),
+          animalName: expect.any(String),
+          animalCount: expect.any(Number),
+          zooCity: expect.any(String),
+          zooName: expect.any(String)
+        }));
       });
   });
 });
