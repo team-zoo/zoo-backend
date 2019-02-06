@@ -24,6 +24,7 @@ describe('animal model', () => {
           name: expect.any(String),
           type: expect.any(String),
           status: expect.any(String),
+          photoUrl: expect.any(String),
           _id: expect.any(String)
         });
       });
@@ -39,7 +40,8 @@ describe('animal model', () => {
             zoo: zoo._id,
             name: 'penguin',
             type: 'bird',
-            status: 'alive'
+            status: 'alive',
+            photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681'
           });
       })
       .then(res => {
@@ -48,6 +50,7 @@ describe('animal model', () => {
           name: 'penguin',
           type: 'bird',
           status: 'alive',
+          photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681',
           _id: expect.any(String),  
         });
       });
@@ -65,6 +68,7 @@ describe('animal model', () => {
                 name: 'parrot',
                 type: 'bird',
                 status: 'alive',
+                photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681'
               });
           });
       })
@@ -74,6 +78,7 @@ describe('animal model', () => {
           name: 'parrot',
           type: 'bird',
           status: 'alive',
+          photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681',
           _id: expect.any(String)  
         });
       });
