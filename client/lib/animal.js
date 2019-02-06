@@ -8,7 +8,7 @@ module.exports = id => {
     .get(`${config.url}/animals/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)
     .type('image/jpeg')
-    .then(res => res.body)
+    .then(res => console.log(res.body))
     .then(animal => {
       return Promise.all([
         Promise.resolve(animal),
