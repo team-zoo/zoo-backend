@@ -20,7 +20,9 @@ describe('zoo model', () => {
         expect(res.body).toHaveLength(5);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
-          avgAge: expect.any(Number)
+          avgAge: expect.any(Number),
+          zooCity: expect.any(String),
+          zooName: expect.any(String)
         }));
       });
   });
@@ -80,7 +82,6 @@ describe('zoo model', () => {
       .get('/animals/stats/fav-animal-each-zoo')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        console.log(res.body);
         expect(res.body).toHaveLength(5);
         res.body.forEach(animal => expect(animal).toEqual({
           _id: expect.any(String),
