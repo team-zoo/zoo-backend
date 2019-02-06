@@ -56,7 +56,7 @@ module.exports = (zoos) => [
     type: 'mammal',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHPQMt8Jj9orstQIew2oWhpfExxQK8ezNC47N1-KuC8qMDlGfO'
+    photoUrl: 'https://images3.alphacoders.com/237/thumb-350-237719.jpg'
   },
   {
     name: 'wolf',
@@ -70,7 +70,7 @@ module.exports = (zoos) => [
     type: 'mammal',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://cdn.images.express.co.uk/img/dynamic/78/590x/Polar-bear-995851.jpg?r=1532878246813'
+    photoUrl: 'https://secure.i.telegraph.co.uk/multimedia/archive/01964/BBX8JM_1964794c.jpg'
   },
   {
     name: 'gazelle',
@@ -84,7 +84,7 @@ module.exports = (zoos) => [
     type: 'mammal',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREca7BeDK9vmj90WvMobUwVDgh_1AmBxBZrmMOl6j2wyjhuz2H'
+    photoUrl: 'https://vetmed.illinois.edu/wp-content/uploads/2017/12/pc-keller-hedgehog.jpg'
   },
   {
     name: 'beaver',
@@ -154,7 +154,7 @@ module.exports = (zoos) => [
     type: 'reptile',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://petco.scene7.com/is/image/PETCO/110981-left-1'
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Gecko.jpg'
   },
 
   {
@@ -162,14 +162,14 @@ module.exports = (zoos) => [
     type: 'reptile',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'http://rivista-cdn.reptilesmagazine.com/bush-viper.jpg?ver=1506482069'
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Bamboo_pit_viper_-_head_profile.jpg'
   },
   {
     name: 'macaw',
     type: 'bird',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Xe74EEeSy8cdBNJ2tx2xzGO2o4FdGK7pJNMLJrRcKTf6vYUo'
+    photoUrl: 'https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Blue-and-Gold-Macaw-300x300.jpg'
   },
   {
     name: 'great blue heron',
@@ -183,7 +183,7 @@ module.exports = (zoos) => [
     type: 'bird',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://images.unsplash.com/photo-1539418561314-565804e349c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+    photoUrl: 'https://kids.nationalgeographic.com/content/dam/kids/photos/animals/Birds/A-G/flamingo-standing.ngsversion.1396530994611.jpg'
   },
   {
     name: 'egret',
@@ -232,7 +232,7 @@ module.exports = (zoos) => [
     type: 'bird',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUt5ajlrcm3AO6AAeuzM8NcJcACNy1OmQA9AZSHz03PV8Yj06x'
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Bald_Eagle_Portrait.jpg'
   },
   {
     name: 'american bullfrog',
@@ -260,14 +260,14 @@ module.exports = (zoos) => [
     type: 'amphibian',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://www.nwf.org/-/media/NEW-WEBSITE/Shared-Folder/Wildlife/Amphibians/amphibian_spotted-salamander_600x300.ashx'
+    photoUrl: 'https://opimedia.azureedge.net/-/media/images/men/editorial/articles/magazine-articles/2007/02-01/a-wealth-of-salamanders/spotted-salamander-jpg.jpg'
   },
   {
     name: 'tree frog',
     type: 'amphibian',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/Red_eyed_tree_frog16x9.jpg?itok=ZbvuCAf7'
+    photoUrl: 'https://c1.staticflickr.com/9/8820/27964054663_38a074335e_b.jpg'
   },
   {
     name: 'leopard frog',
@@ -302,21 +302,21 @@ module.exports = (zoos) => [
     type: 'amphibian',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'http://rivista-cdn.reptilesmagazine.com/vietnamese-mossyfrog500.jpg?ver=1403118535'
+    photoUrl: 'https://i.pinimg.com/originals/d3/3f/68/d33f6853f266807a8836e678778c39fc.jpg'
   },
   {
     name: 'sturgeon',
     type: 'fish',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://www.nwf.org/-/media/NEW-WEBSITE/Shared-Folder/Wildlife/Fish/fish_lake-sturgeon_600x300.ashx'
+    photoUrl: 'https://seahistory.org/wp-content/uploads/Sturgeon.jpg'
   },
   {
     name: 'rainbow trout',
     type: 'fish',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQJHwrb6PeS1rOq7jssEou3qTV2p_T114Wyv9NnWL5WD-I0Cslpg'
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Colorful_male_rainbow_trout.jpg'
   },
   {
     name: 'coho salmon',
@@ -330,21 +330,21 @@ module.exports = (zoos) => [
     type: 'fish',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJ2F9aXMKta79-qfr0wiZ2lBK-j7U2aGFpVViamlznk8akY5k'
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Coho_Spawning_on_the_Salmon_River_%2816335492972%29.jpg'
   },
   {
     name: 'bull trout',
     type: 'fish',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://www.idahostatesman.com/outdoors/fishing/8w5hdf/picture201023929/alternates/LANDSCAPE_1140/Brook%20Trout'
+    photoUrl: 'https://www.fws.gov/oregonfwo/images/secondary_banner/bull_trout_banner.jpg'
   },
   {
     name: 'african lungfish',
     type: 'fish',
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8NUFO4m5ehQDZToKLT7DZqzWzkQnbxgwX3MfA6iidn0fHGD4a'
+    photoUrl: 'http://www.tropical-fish-keeping.com/wp-content/uploads/2015/10/Gilled-African-lungfish-Protopterus-amphibius.jpg'
   },
   {
     name: 'pirahna',
