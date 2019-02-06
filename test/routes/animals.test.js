@@ -12,6 +12,15 @@ describe('animal model', () => {
       });
   });
 
+  it('get a specific animal from search query', () => {
+    return request(app)
+      .get('/animals/search/getAnimal?name=wolf')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body.name).toEqual('wolf');
+      });
+  });
+
   it('get animal by id', () => {
     return getAnimal()
       .then(animal => {
