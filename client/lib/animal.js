@@ -5,25 +5,25 @@ const img = require('terminal-image');
 
 module.exports = id => {
   return request 
-    .get(`${config.url}/zoos/${id}`)
+    .get(`${config.url}/animals/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)
     .type('image/jpeg')
     .then(res => res.body)
-    .then(zoo => {
+    .then(animal => {
       return Promise.all([
-        Promise.resolve(zoo),
-        request.get(zoo.photoUrl)
+        Promise.resolve(animal),
+        request.get(animal.photoUrl)
       ]);
     })
-    .then(([zoo, res]) => {
+    .then(([animal, res]) => {
       return Promise.all([
-        Promise.resolve(zoo),
+        Promise.resolve(animal),
         img.buffer(res.body)
       ]);
     })
-    .then(([zoo, image]) => {
+    .then(([animal, image]) => {
       console.log(image);
-      console.log(`ZOO NAME: ${zoo.name}`);
-      console.log(`ZOO CITY: ${zoo.city}`);
+      console.log(`ANIMAL NAME: ${animal.name}`);
+      console.log(`ANIMAL STATUS: ${animal.status}`);
     });
 };
