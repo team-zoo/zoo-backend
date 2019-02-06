@@ -3,8 +3,8 @@ const { getToken } = require('./tokenStore');
 const request = require('superagent');
 
 module.exports = id => {
-  return request
-    .get(`${config.url}/visitors${id}`)
+  return request 
+    .get(`${config.url}/visitors/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)
     .then(res => res.body)
     .then(visitor => {
