@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 const request = require('superagent');
 
 module.exports = () => {
+  console.log('SIGN IN');
   return inquirer.prompt([
     { 
       type: 'input',
