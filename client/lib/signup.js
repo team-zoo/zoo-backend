@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const request = require('superagent');
 
 module.exports = () => {
-  console.log('SIGN IN');
+  console.log('SIGN UP');
   return inquirer.prompt([
     { 
       type: 'input',
@@ -25,7 +25,7 @@ module.exports = () => {
   ])
     .then(({ username, password, role }) => {
       return request
-        .post(`${config.url}/auth/signin`)
+        .post(`${config.url}/auth/signup`)
         .send({ username, password, role });
     })
     .then(res => {

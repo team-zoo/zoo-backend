@@ -15,7 +15,7 @@ module.exports = () => {
           type: 'list',
           name: 'animals',
           message: 'Please pick a animal',
-          choices: animals.map(animal => animal._id)
+          choices: animals.map(animal => { return { name: animal.name, value: animal._id };})
         }
       ]);
     })

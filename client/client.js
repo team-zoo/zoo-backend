@@ -1,4 +1,5 @@
-const signin = require('./lib/signin');
+// const signin = require('./lib/signin');
+const haveAccount = require('./lib/haveAccount');
 const selection = require('./lib/select');
 /* eslint-disable */
 console.log(`
@@ -14,4 +15,4 @@ console.log(`
                                                                                                        
 `);
 
-signin().then(selection);
+haveAccount().then(selection);
