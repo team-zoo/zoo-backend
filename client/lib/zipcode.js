@@ -5,15 +5,10 @@ const { getToken } = require('./tokenStore');
 
 module.exports = zipcode => {
   return request 
-    .get(`${config.url}/zoos/search/${zipcode}`)
+    .get(`${config.url}/zoos/search/findZoo?zip=${zipcode}`)
     .set('Authorization', `Bearer ${getToken()}`)
-    .then(res => console.log(res.body, 'hELLO'))
+    .then(res => res.body)
     .then(zipcode => {
-      return Promise.all([
-        Promise.resolve(zipcode)
-      ]);
-    })
-    .then(([zipcode]) => {
-      console.log(zipcode.name);
+      console.log(zipcode);
     });
 };
