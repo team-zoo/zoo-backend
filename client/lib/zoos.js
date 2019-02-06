@@ -10,12 +10,14 @@ module.exports = () => {
     .set('Authorization', `Bearer ${getToken()}`)
     .then(res => res.body)
     .then(zoos => {
+      // let names = zoos.map(zoo => zoo.name);
+      // let values = zoos.map(zoo => zoo._id);
       return inquirer.prompt([
         {
           type: 'list',
           name: 'zoos',
           message: 'Please pick a zoo',
-          choices: zoos.map(zoo => zoo._id)
+          choices: zoos.map(zoo => { return { name: zoo.name, value: zoo._id };})
         }
       ]);
     })
