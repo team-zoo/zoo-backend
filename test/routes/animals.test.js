@@ -7,7 +7,9 @@ describe('animal model', () => {
     return request(app)
       .get('/animals')
       .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => expect(res.body).toHaveLength(54));
+      .then(res => {
+        expect(res.body).toHaveLength(58);
+      });
   });
 
   it('gets a specific animal from search query', () => {
@@ -24,6 +26,35 @@ describe('animal model', () => {
       .then(res => expect(res.body[0].type).toEqual('mammal'));
   });
 
+  it('gets a animals by type and color from search query', () => {
+    return request(app)
+      .get('/animals/search/multi/q?type=mammal&color=brown')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body.length).toEqual(11);
+      });
+  });
+
+  it('gets a animals by color from search query', () => {
+    return request(app)
+      .get('/animals/search/color/q?color=red')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body[0].colors).toContain('red');
+        expect(res.body.length).toEqual(4);
+      });
+  });
+
+  // it('gets a animals using query model', () => {
+  //   return request(app)
+  //     .get('/animals/search?color=red')
+  //     .set('Authorization', `Bearer ${getToken()}`)
+  //     .then(res => {
+  //       expect(res.body[0].colors).toContain('red');
+  //       // expect(res.body.length).toEqual(4);
+  //     });
+  // });
+
   it('gets animal by id', () => {
     return getAnimal()
       .then(animal => {
@@ -35,6 +66,8 @@ describe('animal model', () => {
           zoo: expect.any(Object),
           name: expect.any(String),
           type: expect.any(String),
+          legs: expect.any(Number),
+          colors: expect.any(Array),
           status: expect.any(String),
           photoUrl: expect.any(String),
           _id: expect.any(String)
@@ -50,19 +83,23 @@ describe('animal model', () => {
           .set('Authorization', `Bearer ${getToken()}`)
           .send({
             zoo: zoo._id,
-            name: 'penguin',
-            type: 'bird',
+            name: 'snow leopard',
+            type: 'mammal',
+            legs: 4,
+            colors: ['white', 'black'],
             status: 'alive',
-            photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681'
+            photoUrl: 'https://vignette.wikia.nocookie.net/onepiecefanfiction/images/f/fa/Snow-leopard.jpg/revision/latest?cb=20150421142449'
           });
       })
       .then(res => {
         expect(res.body).toEqual({
           zoo: expect.any(String),
-          name: 'penguin',
-          type: 'bird',
+          name: 'snow leopard',
+          type: 'mammal',
           status: 'alive',
-          photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681',
+          legs: 4,
+          colors: ['white', 'black'],
+          photoUrl: 'https://vignette.wikia.nocookie.net/onepiecefanfiction/images/f/fa/Snow-leopard.jpg/revision/latest?cb=20150421142449',
           _id: expect.any(String),  
         });
       });
@@ -78,20 +115,24 @@ describe('animal model', () => {
               .set('Authorization', `Bearer ${getToken()}`)
               .send({
                 zoo: zoo._id,
-                name: 'parrot',
-                type: 'bird',
-                status: 'alive',
-                photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681'
+                name: animal.name,
+                type: animal.type,
+                status: 'dead',
+                legs: animal.legs,
+                colors: animal.colors,
+                photoUrl: animal.photoUrl
               });
           });
       })
       .then(res => {
         expect(res.body).toEqual({ 
           zoo: expect.any(Object),
-          name: 'parrot',
-          type: 'bird',
-          status: 'alive',
-          photoUrl: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/01/16/10/emperor-penguin.jpg?w968h681',
+          name: expect.any(String),
+          type: expect.any(String),
+          status: 'dead',
+          legs: expect.any(Number),
+          colors: expect.any(Array),
+          photoUrl: expect.any(String),
           _id: expect.any(String)  
         });
       });
