@@ -10,8 +10,6 @@ module.exports = () => {
     .set('Authorization', `Bearer ${getToken()}`)
     .then(res => res.body)
     .then(zoos => {
-      // let names = zoos.map(zoo => zoo.name);
-      // let values = zoos.map(zoo => zoo._id);
       return inquirer.prompt([
         {
           type: 'list',
