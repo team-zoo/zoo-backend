@@ -49,7 +49,6 @@ describe('mythical animal model', () => {
     return request(app)
       .get('/mythicalAnimals/search/animalCombination/q?animalCombination=Koala')
       .then(res => {
-        console.log(res.body, 'RES');
         expect(res.body[0].animalCombination).toContain('Koala');
       });
   });
