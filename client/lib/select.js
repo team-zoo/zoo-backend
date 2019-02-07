@@ -21,7 +21,7 @@ const select = () => {
         { name: 'Mythical Animals', value: 'avatars' },
         new inquirer.Separator(),
         { name: 'Search For a Zoo', value: 'zipcodes' },
-        { name: 'Search For an animal type', value: 'animalTypes' }
+        { name: 'Search For animals by type', value: 'animalTypes' }
       ]
     }
   ])
