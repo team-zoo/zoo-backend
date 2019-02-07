@@ -30,6 +30,15 @@ describe('animal model', () => {
       });
   });
 
+  it('gets a animals by type and color from search query', () => {
+    return request(app)
+      .get('/animals/search/multi/q?type=mammal&color=brown')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body.length).toEqual(11);
+      });
+  });
+
   it('gets a animals by color from search query', () => {
     return request(app)
       .get('/animals/search/color/q?color=red')
