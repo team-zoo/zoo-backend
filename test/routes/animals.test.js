@@ -12,13 +12,21 @@ describe('animal model', () => {
       });
   });
 
-  it('gets animals using query model', () => {
+  it('gets animals using query model test 1', () => {
     return request(app)
       .get('/animals/search/query?type=mammal&legs=4&colors=brown')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        console.log(res.body);
         expect(res.body.length).toEqual(11);
+      });
+  });
+
+  it('gets animals using query model test 2', () => {
+    return request(app)
+      .get('/animals/search/query?type=reptile&legs=4')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body.length).toEqual(7);
       });
   });
 
