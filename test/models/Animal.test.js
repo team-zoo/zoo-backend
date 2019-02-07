@@ -9,13 +9,17 @@ describe('animal model', () => {
       zoo: zoo._id, 
       name: 'penguin', 
       type: 'bird', 
-      status: 'alive' 
+      status: 'alive',
+      legs: 2,
+      colors: ['black', 'white']
     });
     expect(animal.toJSON()).toEqual({ 
       zoo: zoo._id, 
       name: 'penguin', 
       type: 'bird', 
       status: 'alive',
+      legs: 2,
+      colors: ['black', 'white'],
       _id: expect.any(mongoose.Types.ObjectId)
     });
   });

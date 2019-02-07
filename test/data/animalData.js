@@ -302,15 +302,6 @@ module.exports = (zoos) => [
     photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Bald_Eagle_Portrait.jpg'
   },
   {
-    name: 'american bullfrog',
-    type: 'amphibian',
-    legs: 4,
-    colors: ['green'],
-    zoo: chance.pickone(zoos)._id,
-    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/North-American-bullfrog1.jpg'
-  },
-  {
     name: 'american toad',
     type: 'amphibian',
     legs: 4,
@@ -318,15 +309,6 @@ module.exports = (zoos) => [
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
     photoUrl: 'http://herpsofnc.org/wp-content/uploads/2016/11/14123314300_9808285854_b.jpg'
-  },
-  {
-    name: 'newt',
-    type: 'amphibian',
-    legs: 4,
-    colors: ['orange'],
-    zoo: chance.pickone(zoos)._id,
-    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://nationalzoo.si.edu/sites/default/files/animals/emperornewt-003.jpg'
   },
   {
     name: 'salamander',
@@ -345,15 +327,6 @@ module.exports = (zoos) => [
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
     photoUrl: 'https://c1.staticflickr.com/9/8820/27964054663_38a074335e_b.jpg'
-  },
-  {
-    name: 'leopard frog',
-    type: 'amphibian',
-    legs: 4,
-    colors: ['green', 'brown', 'black'],
-    zoo: chance.pickone(zoos)._id,
-    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
-    photoUrl: 'https://greenandcleanearth.files.wordpress.com/2009/06/n-leopard-frog.jpg'
   },
   {
     name: 'bullfrog',
@@ -553,5 +526,4 @@ module.exports = (zoos) => [
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
     photoUrl: 'https://vignette.wikia.nocookie.net/onepiecefanfiction/images/f/fa/Snow-leopard.jpg/revision/latest?cb=20150421142449'
   }
-  
 ];
