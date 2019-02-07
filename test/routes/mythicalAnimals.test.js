@@ -2,7 +2,6 @@ const request = require('supertest');
 const app = require('../../lib/app');
 const { getMythicalAnimal } = require('../dataHelper');
 
-
 describe('mythical animal model', () => {
   it('gets a list of all animals', () => {
     return request(app)
@@ -26,6 +25,15 @@ describe('mythical animal model', () => {
               _id: expect.any(String)
             });
           });
+      });
+  });
+
+  it('gets a specific mythical animal from search query', () => {
+    return request(app)
+      .get('/mythicalAnimals/search/name/q?name=Sky%20Bison')
+      .then(res => {
+        console.log(res.body);
+        expect(res.body[0].name).toEqual('Sky Bison');
       });
   });
 });
