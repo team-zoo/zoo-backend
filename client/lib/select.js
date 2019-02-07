@@ -13,7 +13,7 @@ const select = () => {
     {
       type: 'list',
       name: 'selection',
-      message: 'Please choose zoo, visitor,animal, or mythical animals',
+      message: 'Please choose zoo, visitor, animal, or mythical animals',
       choices: [
         { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 
