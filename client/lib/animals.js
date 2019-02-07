@@ -3,6 +3,7 @@ const { getToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const getAnimal = require('./animal');
+const chalkAnimation = require('chalk-animation');
 
 module.exports = () => {
   return request
@@ -14,7 +15,7 @@ module.exports = () => {
         {
           type: 'list',
           name: 'animals',
-          message: 'Please pick a animal',
+          message: chalkAnimation.neon('Please pick a animal'),
           choices: animals.map(animal => { return { name: animal.name, value: animal._id };})
         }
       ]);
