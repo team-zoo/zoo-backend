@@ -29,10 +29,10 @@ const select = () => {
       if(selection === 'zoos') {
         return zoos();
       }
-      else if(selection === 'visitors'){
+      else if(selection === 'visitors') {
         return visitors();
       }
-      else if(selection === 'animals'){
+      else if(selection === 'animals') {
         return animals();
       }
       else if(selection === 'zipcodes') {
@@ -41,7 +41,7 @@ const select = () => {
       else if(selection === 'animalTypes') {
         return animalType();
       }
-      else if(selection === 'avatars'){
+      else if(selection === 'avatars') {
         return avatarTypes();
       }
       else 'DO NOT UNDERSTAND PROMPT';

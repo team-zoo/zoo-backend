@@ -4,8 +4,8 @@ const request = require('superagent');
 const img = require('terminal-image');
 
 module.exports = id => {
-  console.log('whats', id);
-  return request 
+  // console.log('helo', id);
+  return request
     .get(`${config.url}/mythicalAnimals/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)
     .type('image/jpeg')
@@ -24,8 +24,6 @@ module.exports = id => {
     })
     .then(([avatar, image]) => {
       console.log(image);
-      console.log(`ZOO NAME: ${avatar.name}`);
-      // console.log(`ZOO CITY: ${avatar.city}`);
+      console.log(avatar.name);
     });
 };
-

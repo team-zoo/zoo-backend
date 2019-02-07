@@ -4,7 +4,6 @@ const inquirer = require('inquirer');
 const request = require('superagent');
 const getAvatar = require('./avatar');
 
-
 module.exports = () => {
   return request
     .get(`${config.url}/mythicalAnimals`)
@@ -14,9 +13,9 @@ module.exports = () => {
       return inquirer.prompt([
         {
           type: 'list',
-          name: 'visitors',
-          message: 'Explore Avatar Animals',
-          choices: avatars.map(avatar => avatar._id)
+          name: 'avatars',
+          message: 'Please pick an avatar',
+          choices: avatars.map(avatar => { return { name: avatar.name, value: avatar._id };})
         }
       ]);
     })
