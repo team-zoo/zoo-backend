@@ -12,20 +12,6 @@ describe('animal model', () => {
       });
   });
 
-  it('gets a specific animal from search query', () => {
-    return request(app)
-      .get('/animals/search/name/q?name=wolf')
-      .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => expect(res.body.name).toEqual('wolf'));
-  });
-
-  it('gets a animals by type from search query', () => {
-    return request(app)
-      .get('/animals/search/type/q?type=mammal')
-      .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => expect(res.body[0].type).toEqual('mammal'));
-  });
-
   it('gets a animals by type and color from search query', () => {
     return request(app)
       .get('/animals/search/multi/q?type=mammal&color=brown')
@@ -35,25 +21,15 @@ describe('animal model', () => {
       });
   });
 
-  it('gets a animals by color from search query', () => {
+  it('gets animals using query model', () => {
     return request(app)
-      .get('/animals/search/color/q?color=red')
+      .get('/animals/search/query?type=mammal&legs=4&colors=brown')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body[0].colors).toContain('red');
-        expect(res.body.length).toEqual(4);
+        console.log(res.body);
+        expect(res.body.length).toEqual(11);
       });
   });
-
-  // it('gets a animals using query model', () => {
-  //   return request(app)
-  //     .get('/animals/search?color=red')
-  //     .set('Authorization', `Bearer ${getToken()}`)
-  //     .then(res => {
-  //       expect(res.body[0].colors).toContain('red');
-  //       // expect(res.body.length).toEqual(4);
-  //     });
-  // });
 
   it('gets animal by id', () => {
     return getAnimal()
