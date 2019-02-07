@@ -49,6 +49,16 @@ describe('animal model', () => {
       });
   });
 
+  // it('gets a animals using query model', () => {
+  //   return request(app)
+  //     .get('/animals/search?color=red')
+  //     .set('Authorization', `Bearer ${getToken()}`)
+  //     .then(res => {
+  //       expect(res.body[0].colors).toContain('red');
+  //       // expect(res.body.length).toEqual(4);
+  //     });
+  // });
+
   it('gets animal by id', () => {
     return getAnimal()
       .then(animal => {
