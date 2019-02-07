@@ -34,7 +34,6 @@ describe('zoo model', () => {
       .get('/visitors/stats/zoos-by-visitor-count')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toHaveLength(10);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
           visitorCount: expect.any(Number),
