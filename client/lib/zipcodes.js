@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const getZipcode = require('./zipcode');
+const chalkAnimation = require('chalk-animation');
 
 
 module.exports = () => {
@@ -7,7 +8,7 @@ module.exports = () => {
     {
       type: 'input',
       name: 'zipcodes',
-      message: 'Please put in a zipcode'
+      message: chalkAnimation.karaoke('Please put in a zipcode')
     }
   ])
     .then(({ zipcodes }) => {

@@ -3,6 +3,7 @@ const { getToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const getVisitor = require('./visitor');
+const gradient = require('gradient-string');
 
 module.exports = () => {
   return request
@@ -14,7 +15,7 @@ module.exports = () => {
         {
           type: 'list',
           name: 'visitors',
-          message: 'Please creep on a visitor',
+          message: gradient('orange', 'blue')('Please creep on a visitor'),
           choices: visitors.map(visitor => visitor._id)
         }
       ]);
