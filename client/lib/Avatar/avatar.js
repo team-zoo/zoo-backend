@@ -24,6 +24,8 @@ module.exports = id => {
     })
     .then(([avatar, image]) => {
       console.log(image);
-      console.log(avatar.name);
+      console.log(`name: ${avatar.name}`);
+      console.log(`combinations: ${avatar.animalCombination}`);
+      console.log(`habitat: ${avatar.habitat}`);
     });
 };
