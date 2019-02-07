@@ -29,6 +29,7 @@ describe('User model', () => {
       username: 'shabz',
       password: 'passtotheword'
     });
+    
     expect(user._tempPassword).toEqual('passtotheword');
   });
 

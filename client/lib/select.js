@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
-const zoos = require('./zoos');
-const animals = require('./animals');
-const visitors = require('./visitors');
-const zipcodes = require('./zipcodes');
-const animalType = require('./animalTypes');
+const zoos = require('./Zoo/zoos');
+const animals = require('./Animal/animals');
+const visitors = require('./Visitor/visitors');
+const zipcodes = require('./Zipcode/zipcodes');
+const animalType = require('./Animal/animalTypes');
+const avatarTypes = require('./Avatar/avatars');
 
 
 
@@ -12,11 +13,12 @@ const select = () => {
     {
       type: 'list',
       name: 'selection',
-      message: 'Please choose zoo, visitor, or animal',
+      message: 'Please choose zoo, visitor,animal, or mythical animals',
       choices: [
         { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 
         { name: 'Animals', value: 'animals' },
+        { name: 'Mythical Animals', value: 'avatars' },
         new inquirer.Separator(),
         { name: 'Search For a Zoo', value: 'zipcodes' },
         { name: 'Search For an animal type', value: 'animalTypes' }
@@ -27,10 +29,10 @@ const select = () => {
       if(selection === 'zoos') {
         return zoos();
       }
-      else if(selection === 'visitors'){
+      else if(selection === 'visitors') {
         return visitors();
       }
-      else if(selection === 'animals'){
+      else if(selection === 'animals') {
         return animals();
       }
       else if(selection === 'zipcodes') {
@@ -38,6 +40,9 @@ const select = () => {
       }
       else if(selection === 'animalTypes') {
         return animalType();
+      }
+      else if(selection === 'avatars') {
+        return avatarTypes();
       }
       else 'DO NOT UNDERSTAND PROMPT';
     })

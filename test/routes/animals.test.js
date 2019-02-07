@@ -16,18 +16,14 @@ describe('animal model', () => {
     return request(app)
       .get('/animals/search/name/q?name=wolf')
       .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => {
-        expect(res.body.name).toEqual('wolf');
-      });
+      .then(res => expect(res.body.name).toEqual('wolf'));
   });
 
   it('gets a animals by type from search query', () => {
     return request(app)
       .get('/animals/search/type/q?type=mammal')
       .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => {
-        expect(res.body[0].type).toEqual('mammal');
-      });
+      .then(res => expect(res.body[0].type).toEqual('mammal'));
   });
 
   it('gets a animals by type and color from search query', () => {

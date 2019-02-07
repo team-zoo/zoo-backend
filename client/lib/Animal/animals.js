@@ -1,5 +1,5 @@
-const config = require('../config');
-const { getToken } = require('./tokenStore');
+const config = require('../../config');
+const { getToken } = require('../tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const getAnimal = require('./animal');
