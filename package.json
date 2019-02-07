@@ -7,9 +7,13 @@
     "bcryptjs": "^2.4.3",
     "chance": "^1.0.18",
     "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "inquirer": "^6.2.2",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.7",
-    "express": "^4.16.4"
+    "superagent": "^4.1.0",
+    "terminal-image": "^0.1.2",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",

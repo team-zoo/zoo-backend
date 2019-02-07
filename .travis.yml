@@ -1,8 +1,9 @@
 language: node_js
-node_js: node
+node_js: "node"
 services: mongodb
-env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=CHANGEMENOW
+env: MONGODB_URI=mongodb://localhost:27017/zoos AUTH_SECRET=CHANGEMENOW API_KEY=AIzaSyAVU-wrPjeU6yb5aZjUz0AHSsImoI3Ixn4
 deploy:
   provider: heroku
-  api_key:
+  api-key:
     secure: drXA0F5Dbu+kjiqG+rVDbDdvWPGs8ijzaq3GWxhGwDao9URP06DqXEHvi7cOsuZdzbMeuRrENqgi2o2s38lWd4Iy+AJEsNr7piBZoO30Yhfe1sxZHNcumtv0QdUzLVl280rbSN/kBHlvnatxj++uK6hT5vtefLZUcMyJUIsuvQkKFMyugA3CvzGOhBTeqJ6im9xOYrY0rAgpRek4/fUSuiJH9HLlhhJLv3pkkOcuKw9gBqA+vhFoTiurKTPXMRjEzfUFZ5eqB3Xew6sexQMefm0fQrx+pM8jrsLmGETIT2fZE/6lxP8j7DYDyv3UVSLy7mF9mW0iWxEItp/zHJ2+9ZR8kneCIC64VDP+qhp2JSpKDe4JR9EaiRWKKoDvzon4JsHeUI1YZTNoifBx/52NYCi6bhEyCc8+SdtFO5oRg8AZEPVy2xvgf3Kq0qZZMHYqSN/itsOGfo2LUG+ggoVUpNCELb4VaaFEU55ZN5JCe0+XcBD7yfbtbuTay8XFxnL4atgs67GourCnXltPuu/mbFVE6Kx5iw7WWBLSrKi6TfOa3oYTRD30deqBqNIOB3M9h/N4L+NPvodlIyc5gWU6puK9Xb8ikvq7CoCIzGzJU/xKFwcReBqKMdwU44t60yddid2p9LfK0Y6x+247I+r5SvQ7K/YG/qpadxjao+CiXtk=
+
