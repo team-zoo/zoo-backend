@@ -3,7 +3,6 @@ const { getToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const getZoo = require('./zoo');
-const chalk = require('chalk');
 
 module.exports = () => {
   return request
