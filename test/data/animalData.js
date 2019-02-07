@@ -489,5 +489,69 @@ module.exports = (zoos) => [
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
     photoUrl: 'https://c.ndtvimg.com/2018-11/g23mgtg_stingray-pixabay_625x300_18_November_18.jpg'
+  },
+  {
+    name: 'giant panda',
+    type: 'mammal',
+    legs: 4,
+    colors: ['black', 'white'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://www.chinadiscovery.com/assets/images/travel-guide/dujiangyan/panda-base/giant-panda.jpg'
+  },
+  {
+    name: 'sloth',
+    type: 'mammal',
+    legs: 4,
+    colors: ['brown', 'white', 'black'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://www.greenwaytours.com/wp-content/uploads/2018/01/limon-highlights-tour-sloths.jpg'
+  },
+  {
+    name: 'red panda',
+    type: 'mammal',
+    legs: 4,
+    colors: ['red', 'white'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'http://static1.squarespace.com/static/5547e3e5e4b0d6cf695321c9/t/599f37ecccc5c58f6c392e70/1503606804023/REDPANDA.jpg'
+  },
+  {
+    name: 'arctic fox',
+    type: 'mammal',
+    legs: 4,
+    colors: ['white'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://www.zoonewengland.org/media/338544/arcticfox_gallery2.jpg'
+  },
+  {
+    name: 'zebra',
+    type: 'mammal',
+    legs: 4,
+    colors: ['black', 'white'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://media.mnn.com/assets/images/2014/04/zebra%20facts.jpg.653x0_q80_crop-smart.jpg'
+  },
+  {
+    name: 'lemur',
+    type: 'mammal',
+    legs: 4,
+    colors: ['brown', 'white', 'black'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/Q-Z/ring-tailed-lemur-pair.ngsversion.1411258003919.jpg'
+  },
+  {
+    name: 'snow leopard',
+    type: 'mammal',
+    legs: 4,
+    colors: ['white', 'black'],
+    zoo: chance.pickone(zoos)._id,
+    status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
+    photoUrl: 'https://vignette.wikia.nocookie.net/onepiecefanfiction/images/f/fa/Snow-leopard.jpg/revision/latest?cb=20150421142449'
   }
+  
 ];
