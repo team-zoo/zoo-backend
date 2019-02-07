@@ -3,7 +3,7 @@ const app = require('../../lib/app');
 const { getMythicalAnimal } = require('../dataHelper');
 
 describe('mythical animal model', () => {
-  it('gets a list of all animals', () => {
+  it('gets a list of all mythical animals', () => {
     return request(app)
       .get('/mythicalAnimals')
       .then(res => {
@@ -11,7 +11,7 @@ describe('mythical animal model', () => {
       });
   });
 
-  it('gets animal by id', () => {
+  it('gets mythical animal by id', () => {
     return getMythicalAnimal()
       .then(animal => {
         return request(app)
