@@ -36,9 +36,7 @@ describe('visitor app', () => {
     return request(app)
       .get('/visitors')
       .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => {
-        expect(res.body).toHaveLength(50);
-      });
+      .then(res => expect(res.body).toHaveLength(50));
   });
 
   it('can get a visitor by id', () => {
