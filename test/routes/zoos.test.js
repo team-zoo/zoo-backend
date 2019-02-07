@@ -50,4 +50,12 @@ describe('zoo model', () => {
         });
       });
   });
+  it('errors when a bad id is sent', () => {
+    return request(app)
+      .get('/zoos/5c479e5d22e69952c13506a8')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.status).toEqual(404);
+      });
+  });
 });

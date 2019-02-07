@@ -2,6 +2,8 @@ const config = require('../config');
 const { setToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
+const chalk = require('chalk');
+
 
 
 module.exports = () => {
@@ -10,17 +12,17 @@ module.exports = () => {
     { 
       type: 'input',
       name: 'username',
-      message: 'Username'
+      message: chalk.green('Username')
     },
     {
       type: 'password',
       name: 'password',
-      message: 'Password'
+      message: chalk.blue('Password')
     }, 
     {
       type: 'input',
       name: 'role',
-      message: 'Role'
+      message: chalk.magentaBright('Role')
     }
 
   ])

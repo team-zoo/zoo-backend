@@ -9,7 +9,7 @@ const account = () => {
     {
       type: 'list',
       name: 'selection',
-      message: chalk.blue('Do you have an account?'),
+      message: chalk.bold.blue('Do you have an account?'),
       choices: [
         { name: 'Yes', value: 'signin' }, 
         { name: 'No', value: 'signup' }

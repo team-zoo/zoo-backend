@@ -87,5 +87,18 @@ describe('User Model', () => {
         });
       }); 
   });
+  it('compared different two password hashes', () => {
+    return User.create({
+      username: 'email@email.com', 
+      password: 'password',
+      role: 'owner'
+    })
+      .then(user => {
+        return user.compare('password2');
+      })
+      .then(result => { 
+        expect(result).toBeFalsy();
+      });
+  });
 });
 

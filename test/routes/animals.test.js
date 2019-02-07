@@ -49,7 +49,13 @@ describe('animal model', () => {
         });
       });
   });
-
+  it('errors when a bad id is sent', () => {
+    return request(app)
+      .get('/animals/5c479e5d22e69952c13506a8')
+      .then(res => {
+        expect(res.status).toEqual(404);
+      });
+  });
   it('posts an animal', () => {
     return getZoo() 
       .then(zoo => {
