@@ -31,9 +31,7 @@ describe('mythical animal model', () => {
   it('gets a specific mythical animal from animal search query', () => {
     return request(app)
       .get('/mythicalAnimals/search/name/q?name=Sky%20Bison')
-      .then(res => {
-        expect(res.body[0].name).toEqual('Sky Bison');
-      });
+      .then(res => expect(res.body[0].name).toEqual('Sky Bison'));
   });
 
   it('gets list of qualifying mythical animals from habitat search query', () => {
@@ -48,9 +46,7 @@ describe('mythical animal model', () => {
   it('gets a list of qualifying animals from animalCombination search query', () => {
     return request(app)
       .get('/mythicalAnimals/search/animalCombination/q?animalCombination=Koala')
-      .then(res => {
-        expect(res.body[0].animalCombination).toContain('Koala');
-      });
+      .then(res => expect(res.body[0].animalCombination).toContain('Koala'));
   });
 });
 

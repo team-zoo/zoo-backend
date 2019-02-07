@@ -1,9 +1,9 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 const connect = require('../../lib/utils/connect');
+const request = require('supertest');
 const app = require('../../lib/app');
 const User = require('../../lib/models/User');
-const request = require('supertest');
-const mongoose = require('mongoose');
 
 describe('User Model', () => {
   const createUser = (username) => {
@@ -22,6 +22,7 @@ describe('User Model', () => {
   beforeEach(done => {
     mongoose.connection.dropDatabase(done);
   });
+  
   afterAll(done => {
     mongoose.connection.close(done);
   });

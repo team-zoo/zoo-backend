@@ -20,6 +20,7 @@ describe('User model', () => {
       zoo: zoo._id, 
       age: 15 
     });
+    
     expect(visitor.toJSON()).toEqual({ 
       username: user._id, 
       zoo: zoo._id, 
