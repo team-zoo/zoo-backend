@@ -170,6 +170,7 @@ module.exports = (zoos) => [
     zoo: chance.pickone(zoos)._id,
     status: chance.pickone(['alive', 'deceased', 'alive', 'alive', 'alive']),
     photoUrl: 'https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Blue-and-Gold-Macaw-300x300.jpg'
+
   },
   {
     name: 'great blue heron',
