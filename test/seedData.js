@@ -2,9 +2,11 @@ const Chance = require('chance');
 const chance = new Chance();
 const zooData = require('./data/zooData');
 const animalData = require('./data/animalData');
+const mythicalAnimals = require('./data/mythicalAnimals');
 const Zoo = require('../lib/models/Zoo');
 const Visitor = require('../lib/models/Visitor');
 const Animal = require('../lib/models/Animal');
+const MythicalAnimal = require('../lib/models/MythicalAnimal');
 const User = require('../lib/models/User');
 
 const DEFAULT_TOTAL_ZOOS = 10;
@@ -49,6 +51,13 @@ module.exports = (
                     age: chance.age(),
                     favoriteAnimal: [chance.pickone(animals)._id, chance.pickone(animals)._id, chance.pickone(animals)._id, chance.pickone(animals)._id, chance.pickone(animals)._id]
                   });
+                })
+              );
+            })
+            .then(() => {
+              return Promise.all(
+                mythicalAnimals.map(animal => {
+                  return MythicalAnimal.create(animal);
                 })
               );
             });
