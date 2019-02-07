@@ -11,4 +11,10 @@ describe('zoo model', () => {
         rating: 4.5
       }]));
   });
+
+  it('gets suggested zoos by zip and radius', () => {
+    return request(app)
+      .get('/zoos/search/findZoo?zip=97221&radius=10000')
+      .then(res => expect(res.body).toBeDefined());
+  });
 });
