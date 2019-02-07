@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
-const zoos = require('./zoos');
-const animals = require('./animals');
-const visitors = require('./visitors');
-const zipcodes = require('./zipcodes');
-const animalType = require('./animalTypes');
+const zoos = require('./Zoo/zoos');
+const animals = require('./Animal/animals');
+const visitors = require('./Visitor/visitors');
+const zipcodes = require('./Zipcode/zipcodes');
+const animalType = require('./Animal/animalTypes');
 
 
 

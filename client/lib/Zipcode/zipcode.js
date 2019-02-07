@@ -1,6 +1,6 @@
-const config = require('../config');
+const config = require('../../config');
 const request = require('superagent');
-const { getToken } = require('./tokenStore');
+const { getToken } = require('../tokenStore');
 
 
 module.exports = zipcode => {
