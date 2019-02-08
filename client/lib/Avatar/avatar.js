@@ -2,6 +2,10 @@ const config = require('../../config');
 const { getToken } = require('../tokenStore');
 const request = require('superagent');
 const img = require('terminal-image');
+const gifTerm = require('gif-term');
+
+
+
 
 module.exports = id => {
   // console.log('helo', id);
@@ -23,6 +27,7 @@ module.exports = id => {
       ]);
     })
     .then(([avatar, image]) => {
+      console.log(gifTerm('last airbender', { clip: true, width: '50%' }));
       console.log(image);
       console.log(`name: ${avatar.name}`);
       console.log(`combinations: ${avatar.animalCombination}`);

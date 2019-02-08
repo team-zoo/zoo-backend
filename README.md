@@ -4,7 +4,7 @@
 
 ### Description
 
-This is a backend app that allows different zoos to track which animals are popular, along with other visitor information such as the average visitor age and the most favorited animal at each zoo. We also included some data and routes for the mythical animals of Avatar: The Last Airbender.
+This is a backend app that allows different zoos to track which animals are popular, along with other visitor information such as average visitor age and most favorite animal at each zoo. You are also able to search via animal types as well as enter in a zipcode to show you the closest zoo near you. We also included some data and routes for the mythical animals of Avatar: The Last Airbender. 
 
 ### Data Aggregations
 
@@ -22,9 +22,14 @@ This is a backend app that allows different zoos to track which animals are popu
 * '/mythicalAnimals/search/query?' --> name=___ & habitat=___ & animalCombination=___
 * You can add one query string to either route, or more than one; just make sure to connect the query strings with the '&' symbol
 
+### To Start the CLI
+
+* npm i
+* run node client/client.js
+* TIP: If you are using iTERM2, the resolution will be much better than the standard built in command line
+
 ### Command Line Instructions
 
 * npm run seed //to seed the data
 * npm run start //to start the server
 * npm run test //to run the jest test suite
-
