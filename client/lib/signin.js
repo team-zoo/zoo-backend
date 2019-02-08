@@ -22,7 +22,6 @@ module.exports = () => {
       name: 'role',
       message: chalk.green('Role')
     }
-
   ])
     .then(({ username, password, role }) => {
       return request

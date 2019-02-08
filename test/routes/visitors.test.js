@@ -38,6 +38,7 @@ describe('visitor app', () => {
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => expect(res.body).toHaveLength(50));
   });
+  
   it('can get a visitor by id', () => {
     return getVisitor()
       .then(visitor => {
@@ -55,6 +56,7 @@ describe('visitor app', () => {
         });
       });
   });
+
   it('errors when a bad id is sent', () => {
     return request(app)
       .get('/visitors/5c479e5d22e69952c13506a8')
@@ -63,6 +65,7 @@ describe('visitor app', () => {
         expect(res.status).toEqual(404);
       });
   });
+
   it('can patch a visitor', () => {
     return getVisitor()
       .then(visitor => {
