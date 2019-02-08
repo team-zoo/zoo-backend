@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 const getZipcode = require('./zipcode');
 const chalkAnimation = require('chalk-animation');
 
-
 module.exports = () => {
   return inquirer.prompt([
     {

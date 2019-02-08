@@ -6,8 +6,6 @@ const zipcodes = require('./Zipcode/zipcodes');
 const animalType = require('./Animal/animalTypes');
 const avatarTypes = require('./Avatar/avatars');
 
-
-
 const select = () => {
   return inquirer.prompt([
     {
