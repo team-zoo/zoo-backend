@@ -110,7 +110,8 @@ describe('zoo model', () => {
             zoo: expect.any(String),
             status: 'deceased'
           },
-          zooName: expect.any(String)
+          zooName: expect.any(String),
+          deceasedCount: expect.any(Number)
         }));
       });
   });
