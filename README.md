@@ -4,7 +4,16 @@
 
 ### Description
 
-This is a backend app that allows different zoos to track which animals are popular, along with other visitor information such as average visitor age and most favorite animal at each zoo. You are also able to search via animal types as well as enter in a zipcode to show you the closest zoo near you. We also included some data and routes for the mythical animals of Avatar: The Last Airbender. 
+This is a backend app that allows different zoos to track which animals are popular, along with other visitor information such as average visitor age and most favorite animal at each zoo. You are also able to search via animal types/colors/name as well as enter in a zipcode to show you the closest zoo near you. And as a fun bonus, we included some data and routes for the mythical animals of Avatar: The Last Airbender. 
+
+### Tech Stack
+
+* MongoDB and Mongoose for the database and aggregations
+* Express in nodeJS for the server
+* Google Places API and Google GeoCoding API for locating zoos by zip code
+* Bcrypt & JsonWebToken for authorizing and verifying users
+* Jest for testing
+* Terminal-Image, Gif-Term, Chalk, Chalk-Cli, Chalk-Animation, & Inquirer for the CLI part of the app
 
 ### Data Aggregations
 
