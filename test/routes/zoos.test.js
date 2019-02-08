@@ -8,7 +8,7 @@ describe('zoo model', () => {
       .get('/zoos')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toHaveLength(5);
+        expect(res.body).toHaveLength(10);
       });
   });
 
@@ -25,6 +25,7 @@ describe('zoo model', () => {
           name: expect.any(String),
           photoUrl: expect.any(String),
           city: 'Sacramento',
+          zipCode: expect.any(Number),
           _id: expect.any(String),
           id: expect.any(Number)
         });
@@ -43,9 +44,19 @@ describe('zoo model', () => {
           name: 'Oregon Zoo',
           photoUrl: expect.any(String),
           city: expect.any(String),
+          zipCode: expect.any(Number),
           _id: expect.any(String),
           id: expect.any(Number)
         });
+      });
+  });
+  
+  it('errors when a bad id is sent', () => {
+    return request(app)
+      .get('/zoos/5c479e5d22e69952c13506a8')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.status).toEqual(404);
       });
   });
 });

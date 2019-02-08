@@ -6,6 +6,7 @@ const User = require('../lib/models/User');
 const Zoo = require('../lib/models/Zoo');
 const Visitor = require('../lib/models/Visitor');
 const Animal = require('../lib/models/Animal');
+const MythicalAnimal = require('../lib/models/MythicalAnimal');
 const request = require('supertest');
 const app = require('../lib/app');
 
@@ -26,7 +27,7 @@ beforeEach(() => {
 });
 
 beforeEach(() => {
-  return seedData({ totalUsers: 10, totalVisitors: 50, totalAnimals: 30, totalZoos: 5 });
+  return seedData(10, 50, 30, 10, 14);
 });
 
 beforeEach(() => {
@@ -51,7 +52,6 @@ beforeEach(() => {
     });
 });
 
-
 afterAll(done => {
   mongoose.connection.close(done);
 });
@@ -71,5 +71,6 @@ module.exports = {
   ...createGetters(Zoo),
   ...createGetters(Visitor),
   ...createGetters(Animal),
+  ...createGetters(MythicalAnimal),
   getToken: () => token
 };

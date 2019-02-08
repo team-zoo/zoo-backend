@@ -1,9 +1,9 @@
 require('dotenv').config();
+const mongoose = require('mongoose');
 const connect = require('../../lib/utils/connect');
+const request = require('supertest');
 const app = require('../../lib/app');
 const User = require('../../lib/models/User');
-const request = require('supertest');
-const mongoose = require('mongoose');
 
 describe('User Model', () => {
   const createUser = (username) => {
@@ -22,6 +22,7 @@ describe('User Model', () => {
   beforeEach(done => {
     mongoose.connection.dropDatabase(done);
   });
+  
   afterAll(done => {
     mongoose.connection.close(done);
   });
@@ -86,5 +87,18 @@ describe('User Model', () => {
         });
       }); 
   });
-});
 
+  it('compared different two password hashes', () => {
+    return User.create({
+      username: 'email@email.com', 
+      password: 'password',
+      role: 'owner'
+    })
+      .then(user => {
+        return user.compare('password2');
+      })
+      .then(result => { 
+        expect(result).toBeFalsy();
+      });
+  });
+});

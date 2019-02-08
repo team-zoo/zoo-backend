@@ -6,6 +6,7 @@ describe('zoo model', () => {
       photoUrl: 'Great Zoo',
       name: 'Brooklyn Zoo',
       city: 'Brooklyn',
+      zipCode: 89302,
       id: 6
     };
     const newZoo = new Zoo(zoo);
@@ -15,6 +16,7 @@ describe('zoo model', () => {
       photoUrl: 'Great Zoo',
       name: 'Brooklyn Zoo',
       city: 'Brooklyn',
+      zipCode: 89302,
       _id: expect.any(Object),
       id: 6
     });

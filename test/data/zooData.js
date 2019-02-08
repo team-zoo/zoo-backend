@@ -33,5 +33,40 @@ module.exports = [
     zipCode: 98027, 
     photoUrl: 'https://img.grouponcdn.com/deal/7b38429b36ae47a7bbfd9c73d47072e8/e8/v1/c700x420.jpg',
     id: 5
+  },
+  {
+    name: 'Santa Barbara Zoo',
+    city: 'Santa Barbara', 
+    zipCode: 93103, 
+    photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSak2NeFEM-1ikI7o5eK8MbZXLqJOuEXbfTb7oC3gCWjOb7Dxocfw',
+    id: 6
+  },
+  {
+    name: 'Point Defiance Zoo',
+    city: 'Tacoma', 
+    zipCode: 98407, 
+    photoUrl: 'https://lh3.googleusercontent.com/-mamm3ScMgQI/UPnFXPBJN5I/AAAAAAAAAbU/9MZJjDziivI/s640/blogger-image--1087775604.jpg',
+    id: 7
+  },
+  {
+    name: 'Los Angeles Zoo',
+    city: 'Los Angeles', 
+    zipCode: 90027, 
+    photoUrl: 'https://i.ytimg.com/vi/b4f1drTmKtA/maxresdefault.jpg',
+    id: 8
+  },
+  {
+    name: 'Oakland Zoo',
+    city: 'Oakland', 
+    zipCode: 94605, 
+    photoUrl: 'https://streamline.imgix.net/202ac70b-7007-4db3-a1ec-75a76cd7d6d2/06471cd6-952f-41c5-bea9-c916b9683cdb/zone-plan-your-visit.jpg?ixlib=rb-1.1.0&w=2000&h=2000&fit=max&s=add3c7055b07379c2377d063eb078442',
+    id: 9
+  },
+  {
+    name: 'San Francisco Zoo',
+    city: 'San Francisco', 
+    zipCode: 94132, 
+    photoUrl: 'https://i.ytimg.com/vi/b4f1drTmKtA/maxresdefault.jpg',
+    id: 10
   }
 ];

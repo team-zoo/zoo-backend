@@ -36,11 +36,9 @@ describe('visitor app', () => {
     return request(app)
       .get('/visitors')
       .set('Authorization', `Bearer ${getToken()}`)
-      .then(res => {
-        expect(res.body).toHaveLength(50);
-      });
+      .then(res => expect(res.body).toHaveLength(50));
   });
-
+  
   it('can get a visitor by id', () => {
     return getVisitor()
       .then(visitor => {
@@ -56,6 +54,15 @@ describe('visitor app', () => {
           favoriteAnimal: expect.any(Array),
           _id: expect.any(String)
         });
+      });
+  });
+
+  it('errors when a bad id is sent', () => {
+    return request(app)
+      .get('/visitors/5c479e5d22e69952c13506a8')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.status).toEqual(404);
       });
   });
 
