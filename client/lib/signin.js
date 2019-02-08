@@ -6,7 +6,6 @@ const request = require('superagent');
 const chalk = require('chalk');
 
 module.exports = () => {
-  console.log('SIGN IN');
   return inquirer.prompt([
     { 
       type: 'input',

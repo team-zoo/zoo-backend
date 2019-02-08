@@ -15,7 +15,7 @@ module.exports = () => {
         {
           type: 'list',
           name: 'visitors',
-          message: gradient('orange', 'blue')('Please creep on a visitor'),
+          message: gradient.morning('Please creep on a visitor'),
           choices: visitors.map(visitor => visitor._id)
         }
       ]);

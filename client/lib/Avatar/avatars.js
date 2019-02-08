@@ -3,6 +3,7 @@ const { getToken } = require('../tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const getAvatar = require('./avatar');
+const chalkAnimation = require('chalk-animation');
 
 module.exports = () => {
   return request
@@ -14,7 +15,7 @@ module.exports = () => {
         {
           type: 'list',
           name: 'avatars',
-          message: 'Please pick an avatar',
+          message: chalkAnimation.pulse('Please pick an avatar'),
           choices: avatars.map(avatar => { return { name: avatar.name, value: avatar._id };})
         }
       ]);

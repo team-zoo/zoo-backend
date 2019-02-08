@@ -17,4 +17,13 @@ describe('zoo model', () => {
       .get('/zoos/search/findZoo?zip=97221&radius=10000')
       .then(res => expect(res.body).toBeDefined());
   });
+
+  it('errors on missing zip code', () => {
+    return request(app)
+      .get('/zoos/search/findZoo?radius=502000')
+      .then(res => { 
+        expect(res.status).toEqual(400);
+        expect(res.body).toEqual({ error: 'Zipcode required!' });
+      });
+  });
 });
