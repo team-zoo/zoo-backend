@@ -5,15 +5,14 @@ const visitors = require('./Visitor/visitors');
 const zipcodes = require('./Zipcode/zipcodes');
 const animalType = require('./Animal/animalTypes');
 const avatarTypes = require('./Avatar/avatars');
-
-
+const gradient = require('gradient-string');
 
 const select = () => {
   return inquirer.prompt([
     {
       type: 'list',
       name: 'selection',
-      message: 'Please choose zoo, visitor, animal, or mythical animals',
+      message: gradient.instagram('Please choose zoo, visitor, animal, or mythical animals'),
       choices: [
         { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 

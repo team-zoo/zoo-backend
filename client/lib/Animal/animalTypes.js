@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const getType = require('./animalType');
+const gradient = require('gradient-string');
 
 
 module.exports = () => {
@@ -7,7 +8,7 @@ module.exports = () => {
     {
       type: 'input',
       name: 'animalType',
-      message: 'Please put in an animal type (reptile, mammal, fish, bird or amphibian) '
+      message: gradient.teen('Please put in an animal type (reptile, mammal, fish, bird or amphibian)) '
     }
   ])
     .then(({ animalType }) => {

@@ -27,7 +27,7 @@ beforeEach(() => {
 });
 
 beforeEach(() => {
-  return seedData({ totalUsers: 10, totalVisitors: 50, totalAnimals: 30, totalZoos: 5, totalMythicals: 14 });
+  return seedData({ totalUsers: 10, totalVisitors: 50, totalAnimals: 30, totalZoos: 10, totalMythicals: 14 });
 });
 
 beforeEach(() => {
