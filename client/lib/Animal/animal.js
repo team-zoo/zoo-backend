@@ -25,5 +25,6 @@ module.exports = id => {
       console.log(image);
       console.log(`ANIMAL NAME: ${animal.name}`);
       console.log(`ANIMAL STATUS: ${animal.status}`);
+      console.log(`ANIMAL COLOR: ${animal.colors}`);
     });
 };
