@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 const getType = require('./animalType');
 const gradient = require('gradient-string');
 
-
 module.exports = () => {
   return inquirer.prompt([
     {

@@ -1,14 +1,11 @@
+/* eslint-disable no-console */
 const config = require('../../config');
 const { getToken } = require('../tokenStore');
 const request = require('superagent');
 const img = require('terminal-image');
 const gifTerm = require('gif-term');
 
-
-
-
 module.exports = id => {
-  // console.log('helo', id);
   return request
     .get(`${config.url}/mythicalAnimals/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)

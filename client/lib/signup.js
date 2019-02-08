@@ -1,9 +1,9 @@
+/* eslint-disable no-console */
 const config = require('../config');
 const { setToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const chalk = require('chalk');
-
 
 module.exports = () => {
   console.log('SIGN UP');
@@ -23,7 +23,6 @@ module.exports = () => {
       name: 'role',
       message: chalk.magentaBright('Role')
     }
-
   ])
     .then(({ username, password, role }) => {
       return request
@@ -33,5 +32,4 @@ module.exports = () => {
     .then(res => {
       setToken(res.body.token);
     });
-
 };

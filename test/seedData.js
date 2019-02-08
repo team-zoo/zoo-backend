@@ -56,6 +56,7 @@ module.exports = (
                 })
               );
             })
+            
             .then(() => {
               return Promise.all(
                 mythicalAnimals.map(animal => {

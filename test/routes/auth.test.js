@@ -87,6 +87,7 @@ describe('User Model', () => {
         });
       }); 
   });
+
   it('compared different two password hashes', () => {
     return User.create({
       username: 'email@email.com', 
@@ -101,4 +102,3 @@ describe('User Model', () => {
       });
   });
 });
-

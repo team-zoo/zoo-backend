@@ -1,6 +1,6 @@
 # Zoo Mid Career Track Project
 ## By: Marcy, Aaron, Kristin, Shaba
-#### February 7, 2019
+## February 7, 2019
 
 ### Description
 

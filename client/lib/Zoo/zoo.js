@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const config = require('../../config');
 const { getToken } = require('../tokenStore');
 const request = require('superagent');
