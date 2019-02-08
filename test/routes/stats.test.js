@@ -98,4 +98,20 @@ describe('zoo model', () => {
         }));
       });
   });
+
+  it('get top 3 zoos with least deceased animals', () => {
+    return request(app)
+      .get('/animals/stats/least-dead')
+      .set('Authorization', `Bearer ${getToken()}`)
+      .then(res => {
+        expect(res.body).toHaveLength(3);
+        res.body.forEach(zoo => expect(zoo).toEqual({
+          _id: { 
+            zoo: expect.any(String),
+            status: 'deceased'
+          },
+          zooName: expect.any(String)
+        }));
+      });
+  });
 });
