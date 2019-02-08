@@ -5,7 +5,6 @@ const request = require('superagent');
 const chalk = require('chalk');
 
 
-
 module.exports = () => {
   console.log('SIGN UP');
   return inquirer.prompt([

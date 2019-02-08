@@ -1,9 +1,9 @@
+/* eslint-disable no-console */
 const config = require('../config');
 const { setToken } = require('./tokenStore');
 const inquirer = require('inquirer');
 const request = require('superagent');
 const chalk = require('chalk');
-
 
 module.exports = () => {
   return inquirer.prompt([
@@ -32,5 +32,4 @@ module.exports = () => {
     .then(res => {
       setToken(res.body.token);
     });
-
 };

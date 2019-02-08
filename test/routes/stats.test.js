@@ -19,7 +19,6 @@ describe('zoo model', () => {
       .get('/visitors/stats/average-age-each')
       .set('Authorization', `Bearer ${getToken()}`)
       .then(res => {
-        expect(res.body).toHaveLength(10);
         res.body.forEach(zoo => expect(zoo).toEqual({
           _id: expect.any(String),
           avgAge: expect.any(Number),
