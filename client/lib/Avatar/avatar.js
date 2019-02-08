@@ -12,7 +12,7 @@ module.exports = id => {
   return request
     .get(`${config.url}/mythicalAnimals/${id}`)
     .set('Authorization', `Bearer ${getToken()}`)
-    .type('gif')
+    .type('image/jpeg')
     .then(res => res.body)
     .then(avatar => {
       return Promise.all([
