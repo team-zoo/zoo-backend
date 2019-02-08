@@ -10,7 +10,7 @@ const MythicalAnimal = require('../lib/models/MythicalAnimal');
 const User = require('../lib/models/User');
 
 const DEFAULT_TOTAL_ZOOS = 10;
-const DEFAULT_TOTAL_VISITORS = 50;
+const DEFAULT_TOTAL_VISITORS = 250;
 const DEFAULT_TOTAL_ANIMALS = 100;
 const DEFAULT_TOTAL_USERS = 100;
 const DEFAULT_TOTAL_MYTHICALS = 14;
@@ -56,7 +56,6 @@ module.exports = (
                 })
               );
             })
-            
             .then(() => {
               return Promise.all(
                 mythicalAnimals.map(animal => {
