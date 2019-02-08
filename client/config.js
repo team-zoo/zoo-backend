@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'http://localhost:7890'
+  url: 'https://zoo-backend-2019.herokuapp.com'
 };
