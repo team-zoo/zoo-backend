@@ -8,7 +8,7 @@ module.exports = () => {
     {
       type: 'input',
       name: 'animalType',
-      message: gradient.teen('Please put in an animal type')
+      message: gradient.teen('Please put in an animal type (reptile, mammal, fish, bird or amphibian)')
     }
   ])
     .then(({ animalType }) => {

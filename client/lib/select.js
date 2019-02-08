@@ -12,7 +12,7 @@ const select = () => {
     {
       type: 'list',
       name: 'selection',
-      message: gradient.instagram('Please choose zoo, visitor,animal, or mythical animals'),
+      message: gradient.instagram('Please choose zoo, visitor, animal, or mythical animals'),
       choices: [
         { name: 'Zoo', value: 'zoos' }, 
         { name: 'Visitor', value: 'visitors' }, 
@@ -20,7 +20,7 @@ const select = () => {
         { name: 'Mythical Animals', value: 'avatars' },
         new inquirer.Separator(),
         { name: 'Search For a Zoo', value: 'zipcodes' },
-        { name: 'Search For an animal type', value: 'animalTypes' }
+        { name: 'Search For animals by type', value: 'animalTypes' }
       ]
     }
   ])
