@@ -2,6 +2,7 @@
 ## By: Marcy, Aaron, Kristin, Shaba
 ## February 7, 2019
 
+![alt text](https://github.com/team-zoo/zoo-backend/blob/dev/zoo-photo.png)
 
 
 ### Description
