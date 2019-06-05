@@ -9,19 +9,13 @@ const Animal = require('../lib/models/Animal');
 const MythicalAnimal = require('../lib/models/MythicalAnimal');
 const User = require('../lib/models/User');
 
-const DEFAULT_TOTAL_ZOOS = 10;
 const DEFAULT_TOTAL_VISITORS = 250;
-const DEFAULT_TOTAL_ANIMALS = 100;
 const DEFAULT_TOTAL_USERS = 100;
-const DEFAULT_TOTAL_MYTHICALS = 14;
 
 /*eslint-disable no-unused-vars*/
 module.exports = (
-  totalUsers = DEFAULT_TOTAL_USERS, 
-  totalVisitors = DEFAULT_TOTAL_VISITORS, 
-  totalAnimals = DEFAULT_TOTAL_ANIMALS, 
-  totalZoos = DEFAULT_TOTAL_ZOOS,
-  totalMythicals = DEFAULT_TOTAL_MYTHICALS
+  totalUsers = DEFAULT_TOTAL_USERS,
+  totalVisitors = DEFAULT_TOTAL_VISITORS
 ) => {
   return Promise.all(
     [...Array(totalUsers)].map(() => {
